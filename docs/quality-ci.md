@@ -1,0 +1,59 @@
+# Quality CI
+
+OpenCode Lab has two distinct checks. Keep them separate: one proves the
+harness is internally consistent, and the other tells an operator whether this
+Mac is ready to launch it.
+
+## Pull-request checks
+
+The `Agent Quality` workflow runs on pull requests and protected-branch pushes.
+It uses Node 24, read-only repository access, and no model, Cloudflare,
+deployment, Notion, or GitHub-write credentials. It should run:
+
+```bash
+npm run lint
+npm run quality:test
+npm run quality:eval:test
+```
+
+The tests cover launcher policy, model routing, Docker/Compose contracts,
+gateway boundaries, quality-controller state, TUI cache behavior, and the
+offline Inspect contracts. They do not make paid model calls and do not build
+Docker images as part of a health check.
+
+`npm run doctor` is intentionally not a CI replacement. It inspects the local
+Docker daemon, local images, named volumes, writable runtime state, and the
+running Quality MCP. It never runs `docker build`. A stale local image is a
+warning that says to run `lab --rebuild`; it is not silently repaired by
+doctor.
+
+## Metered evaluations
+
+Run paid evaluation trials only from an explicitly enabled, protected workflow
+or a disposable local environment. Store `CLOUDFLARE_ACCOUNT_ID` and
+`CLOUDFLARE_API_TOKEN` as repository secrets, never in logs or fixtures. Keep
+`AGENT_EVALS_ENABLED` disabled until there is an approved budget and a test
+matrix. A passing trial informs routing; it does not automatically promote a
+model or grant deployment authority.
+
+## Release evidence
+
+Before merging a harness change, record the exact commands and results in the
+PR. For changes to the launcher or Compose file, include:
+
+```bash
+npm run doctor
+npm run quality:test
+docker compose --env-file opencode.env -f docker-compose.opencode.yml config --quiet
+```
+
+If the Dockerfile or an image pin changed, run `lab --rebuild` explicitly and
+repeat `npm run doctor`. The snapshot will then show the local image fingerprint
+matching `Dockerfile.opencode` and its pinned OpenDesign runtime.
+
+## Branch protection
+
+Require the offline quality jobs before merge. Keep deployment, publishing,
+credential rotation, and metered evaluations in separate protected workflows.
+No CI job should receive a general-purpose personal token simply to make a
+quality badge green.

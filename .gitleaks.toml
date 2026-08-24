@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Fixed non-secret capability key used only by unit tests"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = ['''^test-capability-signing-key-at-least-32-bytes$''']

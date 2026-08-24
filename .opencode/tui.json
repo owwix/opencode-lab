@@ -1,0 +1,37 @@
+{
+  "$schema": "https://opencode.ai/tui.json",
+  "theme": "system",
+  "leader_timeout": 1500,
+  "scroll_speed": 2,
+  "scroll_acceleration": {
+    "enabled": true
+  },
+  "diff_style": "stacked",
+  "mouse": false,
+  "attention": {
+    "enabled": true,
+    "notifications": true,
+    "sound": false,
+    "volume": 0.3,
+    "sound_pack": "opencode.default"
+  },
+  "keybinds": {
+    "command_list": "ctrl+p",
+    "sidebar_toggle": "<leader>b",
+    "session_new": "<leader>n",
+    "session_list": "<leader>l",
+    "session_rename": "ctrl+r",
+    "status_view": "<leader>s",
+    "messages_copy": ["<leader>y", "ctrl+shift+c"],
+    "input_paste": [
+      { "key": "ctrl+v", "preventDefault": false },
+      { "key": "super+v", "preventDefault": false }
+    ]
+  },
+  "plugin": [
+    "./plugins/agent-ops.tsx",
+    "./plugins/cache-stats.tsx",
+    "./plugins/workflow-menu.tsx",
+    "./plugins/lifecycle-hooks.tsx"
+  ]
+}

@@ -1,0 +1,52 @@
+name: Scheduled Agent Regression
+
+on:
+  schedule:
+    - cron: "17 8 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: scheduled-agent-regression
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    if: ${{ vars.AGENT_EVALS_ENABLED == 'true' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - id: kimi-k27
+            model: "@cf/moonshotai/kimi-k2.7-code"
+          - id: deepseek-v4-pro
+            model: "@cf/deepseek-ai/deepseek-v4-pro-0813"
+    env:
+      OPENAI_API_KEY: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      OPENAI_BASE_URL: https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/ai/v1
+      AGENT_QUALITY_TRIALS: "1"
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: { fetch-depth: 1, persist-credentials: false }
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: { node-version: 24.18.0, cache: npm }
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+        with:
+          {
+            version: 0.11.32,
+            enable-cache: true,
+            cache-dependency-glob: quality/inspect/uv.lock
+          }
+      - run: npm ci && uv sync --project quality/inspect --locked --python 3.12
+      - run: npm run quality:eval -- --model 'openai/${{ matrix.model }}'
+      - run: npm run quality:eval:trajectory -- --model 'openai/${{ matrix.model }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: ${{ always() }}
+        with:
+          name: scheduled-${{ matrix.id }}
+          path: quality/inspect/logs/
+          retention-days: 30

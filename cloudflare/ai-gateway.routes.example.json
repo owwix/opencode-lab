@@ -1,0 +1,54 @@
+{
+  "gateway": "opencode-lab",
+  "schemaVersion": 1,
+  "routes": [
+    {
+      "name": "dispatch",
+      "model": "@cf/zai-org/glm-4.7-flash",
+      "purpose": "classification and run launch",
+      "maxRequestsPerMinute": 50,
+      "fallback": null,
+      "cache": false
+    },
+    {
+      "name": "standard",
+      "model": "@cf/openai/gpt-oss-120b",
+      "purpose": "routine coding and research",
+      "maxRequestsPerMinute": 20,
+      "fallback": "dispatch",
+      "cache": false
+    },
+    {
+      "name": "frontier-code",
+      "model": "@cf/moonshotai/kimi-k2.7-code",
+      "purpose": "complex implementation and recovery",
+      "maxRequestsPerMinute": 20,
+      "fallback": null,
+      "cache": false
+    },
+    {
+      "name": "long-context-vision",
+      "model": "@cf/moonshotai/kimi-k2.6",
+      "purpose": "visual and long-context inputs",
+      "maxRequestsPerMinute": 20,
+      "fallback": null,
+      "cache": false
+    },
+    {
+      "name": "review",
+      "model": "@cf/moonshotai/kimi-k2.7-code",
+      "purpose": "independent read-only review",
+      "maxRequestsPerMinute": 20,
+      "fallback": null,
+      "cache": false
+    }
+  ],
+  "metadata": ["lab.run_id", "lab.agent", "lab.phase", "lab.model"],
+  "spendLimits": {
+    "monthlyUsd": 100,
+    "routeOverrides": {
+      "review": 20
+    }
+  },
+  "notes": "Illustrative handoff. Apply through the Cloudflare dashboard/API after review; do not treat this file as credentials."
+}

@@ -1,0 +1,22 @@
+; Lab agent seatbelt profile (macOS sandbox-exec).
+; Restricts host-side Lab helpers (browser relay, fleet workers) to loopback
+; networking and the mounted workspace path passed via -D WORKSPACE=...
+
+(version 1)
+(deny default)
+(allow process*)
+(allow signal)
+(allow sysctl-read)
+(allow mach*)
+(allow file-read*)
+(allow file-write* (subpath (param "WORKSPACE")))
+(allow file-write* (subpath "/private/tmp"))
+(allow file-write* (subpath "/tmp"))
+(allow file-write* (subpath (param "HOME")))
+(allow file-write* (regex #"^/Users/.*/Library/Caches/ms-playwright(/|$)"))
+(allow file-write* (regex #"^/Users/.*/\.quality(/|$)"))
+(allow network* (remote ip "localhost:*"))
+(allow network* (local ip "*:*"))
+(allow system-socket)
+(deny file-write* (subpath "/"))
+(deny network* (remote ip "*:*"))

@@ -1,0 +1,471 @@
+name: opencode-lab
+
+services:
+  open-design:
+    profiles: ["design"]
+    image: ghcr.io/nexu-io/od@sha256:8620b5f5037b4cc7e4ef3779bc86571445e36764fafb7d69951a840e11aa95b8
+    restart: "no"
+    init: true
+    user: "1001:1001"
+    mem_limit: 384m
+    cpus: 1.0
+    pids_limit: 128
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    depends_on:
+      open-design-state-init:
+        condition: service_completed_successfully
+    command:
+      - node
+      - apps/daemon/dist/cli.js
+      - --no-open
+      - --host
+      - 0.0.0.0
+      - --port
+      - "7456"
+    environment:
+      NODE_ENV: production
+      NODE_OPTIONS: --max-old-space-size=192
+      OD_BIND_HOST: 0.0.0.0
+      OD_PORT: "7456"
+      OD_WEB_PORT: "7456"
+      OD_API_TOKEN: ${OD_API_TOKEN:?OpenDesign API token is required}
+    volumes:
+      - open-design-state:/app/.od
+    read_only: true
+    tmpfs:
+      - /tmp
+    networks:
+      - opencode-internal
+
+  # This is the only agent-stack service that receives the real Cloudflare and
+  # Quality MCP credentials. OpenDesign separately receives only its daemon
+  # token. OpenCode receives a local scoped token and can reach only the fixed
+  # routes and model allowlist enforced here.
+  agent-gateway:
+    build:
+      context: docker/agent-gateway
+      dockerfile: Dockerfile
+    image: opencode-lab-agent-gateway:local
+    restart: unless-stopped
+    init: true
+    read_only: true
+    mem_limit: 256m
+    cpus: 0.5
+    pids_limit: 64
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    environment:
+      AGENT_GATEWAY_SIGNING_KEY: ${AGENT_GATEWAY_SIGNING_KEY:?Capability signing key is required}
+      OPENCODE_WORKSPACE_HASH: ${OPENCODE_WORKSPACE_HASH:?Workspace hash is required}
+      OPENCODE_PROJECT_ID: ${OPENCODE_PROJECT_ID:?Project ID is required}
+      OPENCODE_LAUNCH_SESSION_ID: ${OPENCODE_LAUNCH_SESSION_ID:?Launch session ID is required}
+      OPENCODE_RUN_ID: ${OPENCODE_RUN_ID:?Run ID is required}
+      CLOUDFLARE_ACCOUNT_ID: ${CLOUDFLARE_ACCOUNT_ID:?Cloudflare account ID is required}
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN:?Cloudflare Workers AI token is required}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GOOGLE_CLOUD_PROJECT: ${GOOGLE_CLOUD_PROJECT:-}
+      GOOGLE_APPLICATION_CREDENTIALS: /run/google/adc.json
+      OD_API_TOKEN: ${OD_API_TOKEN:?OpenDesign API token is required}
+      QUALITY_MCP_TOKEN: ${QUALITY_MCP_TOKEN:?Quality MCP token is required}
+      QUALITY_REGISTRATION_TOKEN: ${QUALITY_REGISTRATION_TOKEN:?Launch registration token is required}
+      NOTION_PUBLISHER_TOKEN: ${NOTION_PUBLISHER_TOKEN:-}
+      GITHUB_PUBLISH_RELAY_URL: ${GITHUB_PUBLISH_RELAY_URL:-}
+      GITHUB_PUBLISH_RELAY_TOKEN: ${GITHUB_PUBLISH_RELAY_TOKEN:-}
+      OPENPETS_RELAY_URL: ${OPENPETS_RELAY_URL:-}
+      OPENPETS_RELAY_TOKEN: ${OPENPETS_RELAY_TOKEN:-}
+      LAB_BROWSER_VERIFY_RELAY_URL: ${LAB_BROWSER_VERIFY_RELAY_URL:-}
+      LAB_BROWSER_VERIFY_RELAY_TOKEN: ${LAB_BROWSER_VERIFY_RELAY_TOKEN:-}
+      LAB_BROWSER_SESSION_RELAY_URL: ${LAB_BROWSER_SESSION_RELAY_URL:-}
+      LAB_BROWSER_SESSION_RELAY_TOKEN: ${LAB_BROWSER_SESSION_RELAY_TOKEN:-}
+      ARTIFACT_DOWNLOAD_ALLOWLIST: ${ARTIFACT_DOWNLOAD_ALLOWLIST:-}
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=16m
+    volumes:
+      - ${HOME}/.config/gcloud/application_default_credentials.json:/run/google/adc.json:ro
+    networks:
+      - opencode-internal
+      - agent-gateway-egress
+
+  notion-publisher-state-init:
+    profiles: ["notion"]
+    image: alpine:3.24@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
+    user: "0:0"
+    command: ["chown", "-R", "1000:1000", "/state"]
+    read_only: true
+    network_mode: none
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+    cap_add: ["CHOWN"]
+    volumes: ["notion-publisher-state:/state"]
+
+  notion-publisher:
+    profiles: ["notion"]
+    build:
+      context: .
+      dockerfile: docker/notion-publisher/Dockerfile
+    image: opencode-lab-notion-publisher:local
+    restart: unless-stopped
+    init: true
+    user: "1000:1000"
+    read_only: true
+    mem_limit: 192m
+    cpus: 0.25
+    pids_limit: 64
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+    depends_on:
+      notion-publisher-state-init:
+        condition: service_completed_successfully
+    environment:
+      NOTION_API_TOKEN: ${NOTION_API_TOKEN:-}
+      NOTION_PUBLISHER_TOKEN: ${NOTION_PUBLISHER_TOKEN:-}
+      NOTION_PUBLISH_TARGETS_JSON: ${NOTION_PUBLISH_TARGETS_JSON:-}
+      NOTION_PUBLISH_STATE_DIR: /state
+      AGENT_GATEWAY_SIGNING_KEY: ${AGENT_GATEWAY_SIGNING_KEY:?Capability signing key is required}
+      OPENCODE_WORKSPACE_HASH: ${OPENCODE_WORKSPACE_HASH:?Workspace hash is required}
+      OPENCODE_PROJECT_ID: ${OPENCODE_PROJECT_ID:?Project ID is required}
+      OPENCODE_LAUNCH_SESSION_ID: ${OPENCODE_LAUNCH_SESSION_ID:?Launch session ID is required}
+      OPENCODE_RUN_ID: ${OPENCODE_RUN_ID:?Run ID is required}
+    volumes: ["notion-publisher-state:/state"]
+    tmpfs: ["/tmp:rw,noexec,nosuid,nodev,size=16m"]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:8796/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    networks: ["opencode-internal", "notion-publisher-egress"]
+
+  # Existing volumes may have been initialized by the former root runtime.
+  # This networkless one-shot grants only the ownership change OpenDesign needs.
+  open-design-state-init:
+    profiles: ["design"]
+    image: alpine:3.24@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
+    user: "0:0"
+    command:
+      - chown
+      - -R
+      - "1001:1001"
+      - /state
+    read_only: true
+    network_mode: none
+    mem_limit: 32m
+    cpus: 0.1
+    pids_limit: 16
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+    volumes:
+      - open-design-state:/state
+
+  # Hound shares this service's network namespace. The firewall rejects new
+  # connections to private, link-local, metadata, and reserved destinations
+  # after DNS resolution, including redirect targets.
+  hound-firewall:
+    profiles: ["research"]
+    build:
+      context: docker/hound-firewall
+      dockerfile: Dockerfile
+    image: opencode-lab-hound-firewall:local
+    restart: "no"
+    init: true
+    user: "0:0"
+    read_only: true
+    mem_limit: 32m
+    cpus: 0.1
+    pids_limit: 16
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_ADMIN
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=1m
+    networks:
+      - hound-egress
+
+  hound:
+    profiles: ["research"]
+    build:
+      context: docker/hound
+      dockerfile: Dockerfile
+    image: opencode-lab-hound:13.1.2
+    restart: "no"
+    init: true
+    read_only: true
+    shm_size: 1gb
+    mem_limit: 2g
+    cpus: 2.0
+    pids_limit: 256
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    depends_on:
+      hound-firewall:
+        condition: service_healthy
+        restart: true
+    environment:
+      HOME: /home/hound
+      HOUND_BROWSER_IDLE_TIMEOUT: "300"
+      XDG_CACHE_HOME: /home/hound/.hound/cache
+    volumes:
+      - hound-state:/home/hound/.hound
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=512m
+      # Hound hard-codes this response-cache path. Keep it writable but
+      # ephemeral so fetched page content is not retained in the named state.
+      - /home/hound/.master_fetch_cache:rw,noexec,nosuid,nodev,size=256m,uid=10001,gid=10001
+    network_mode: service:hound-firewall
+
+  # Hound is deliberately absent from the trusted OpenCode network. This
+  # fixed-upstream relay exposes only its MCP path and cannot proxy arbitrary
+  # destinations into the OpenDesign or OpenCode containers.
+  hound-relay:
+    profiles: ["research"]
+    build:
+      context: docker/hound-relay
+      dockerfile: Dockerfile
+    image: opencode-lab-hound-relay:local
+    restart: "no"
+    init: true
+    read_only: true
+    mem_limit: 128m
+    cpus: 0.25
+    pids_limit: 64
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    environment:
+      HOUND_UPSTREAM_HOST: hound-firewall
+    depends_on:
+      hound:
+        condition: service_healthy
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=16m
+    networks:
+      - opencode-internal
+      - hound-egress
+
+  # Existing named volumes may have been created by the former root runtime.
+  # This one-shot, networkless initializer repairs ownership and seeds a
+  # writable personal TUI config only when one does not already exist.
+  opencode-state-init:
+    # Reuse the already-required OpenCode image so Node can merge JSON in this
+    # one-shot; the launcher ensures the image exists before running init.
+    image: opencode-lab-opencode:local
+    user: "0:0"
+    # Seed writable TUI config, sync theme from state kv, and repair ownership
+    # for the host-mapped OpenCode UID. Script lives outside YAML to avoid
+    # quote folding that breaks sed.
+    entrypoint: ["/bin/sh"]
+    command: ["/init/opencode-state-init.sh"]
+    environment:
+      OPENCODE_UID: ${OPENCODE_UID:-1000}
+      OPENCODE_GID: ${OPENCODE_GID:-1000}
+      # Bump only when the persistent-volume ownership/layout contract changes.
+      # Warm launches skip the recursive ownership repair when this matches.
+      OPENCODE_STATE_INIT_VERSION: "2"
+      # Bump when clipboard, keybind, or required-plugin defaults change.
+      OPENCODE_TUI_INIT_VERSION: "1"
+    read_only: true
+    network_mode: none
+    mem_limit: 64m
+    cpus: 0.1
+    pids_limit: 16
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+    volumes:
+      - opencode-state:/state
+      - opencode-user-config:/user-config
+      - opencode-package-cache:/package-cache
+      - opencode-tmp:/tmp-opencode
+      - ./.opencode/tui.json:/defaults/tui.json:ro
+      - ${OPENCODE_CONFIG_DIR_HOST:-./.opencode}/themes:/defaults/themes:ro
+      - ./scripts/opencode-state-init.sh:/init/opencode-state-init.sh:ro
+      - ./scripts/opencode-tui-merge.mjs:/init/opencode-tui-merge.mjs:ro
+
+  opencode:
+    # Extend the official OpenCode image with Node 24 and npm so coding agents
+    # can actually run the checks and build commands in the mounted project.
+    build:
+      context: .
+      dockerfile: Dockerfile.opencode
+      args:
+        OPENCODE_UID: ${OPENCODE_UID:-1000}
+        OPENCODE_GID: ${OPENCODE_GID:-1000}
+        OPENCODE_LAB_IMAGE_FINGERPRINT: ${OPENCODE_LAB_IMAGE_FINGERPRINT:-unknown}
+    image: opencode-lab-opencode:local
+    user: "${OPENCODE_UID:-1000}:${OPENCODE_GID:-1000}"
+    working_dir: ${OPENCODE_WORKSPACE_CONTAINER:-/workspace}
+    stdin_open: true
+    tty: true
+    init: true
+    read_only: true
+    mem_limit: 4g
+    cpus: 4.0
+    pids_limit: 512
+    security_opt:
+      - no-new-privileges:true
+      # Optional tighter profile: set LAB_SECCOMP_PROFILE=./docker/opencode-seccomp.json
+      # in the environment and rebuild compose if you want an explicit allowlist.
+      # Default Docker seccomp remains in force when this is unset.
+    cap_drop:
+      - ALL
+    depends_on:
+      agent-gateway:
+        condition: service_healthy
+      opencode-state-init:
+        condition: service_completed_successfully
+    environment:
+      HOME: /home/opencode
+      XDG_DATA_HOME: /home/opencode/.local/share
+      XDG_STATE_HOME: /home/opencode/.local/share/opencode/state
+      XDG_CONFIG_HOME: /home/opencode/.config
+      XDG_CACHE_HOME: /home/opencode/.cache
+      NPM_CONFIG_CACHE: /home/opencode/.cache/npm
+      # pnpm reads npm_config_* for its config keys. Keep its content-addressed
+      # store off the macOS workspace bind and reusable across Lab sessions.
+      npm_config_store_dir: /home/opencode/.cache/pnpm/store
+      YARN_CACHE_FOLDER: /home/opencode/.cache/yarn
+      BUN_INSTALL_CACHE_DIR: /home/opencode/.cache/bun
+      # OpenTUI loads its pinned native renderer from a temporary shared
+      # library. Keep the general cache tmpfs non-executable, but give that
+      # loader a small isolated executable named volume instead of making all
+      # of /tmp executable.
+      TMPDIR: /home/opencode/.tmp
+      OPENCODE_CONFIG: /opencode-config/opencode.json
+      OPENCODE_CONFIG_DIR: /opencode-config/.opencode
+      OPENCODE_TUI_CONFIG: /home/opencode/.config/opencode/tui.json
+      OPENCODE_WORKSPACE_NAME: ${OPENCODE_WORKSPACE_NAME:-Workspace}
+      OPENCODE_LAB_PACKS_JSON: ${OPENCODE_LAB_PACKS_JSON:-[]}
+      AGENT_GATEWAY_TOKEN: ${AGENT_CAPABILITY_LEASE:?Capability lease is required}
+      OPENCODE_WORKSPACE_HASH: ${OPENCODE_WORKSPACE_HASH:?Workspace hash is required}
+      OPENCODE_PROJECT_ID: ${OPENCODE_PROJECT_ID:?Project ID is required}
+      OPENCODE_LAUNCH_SESSION_ID: ${OPENCODE_LAUNCH_SESSION_ID:?Launch session ID is required}
+      OPENCODE_RUN_ID: ${OPENCODE_RUN_ID:?Run ID is required}
+      WORKERS_AI_GATEWAY_URL: http://agent-gateway:8787
+      # Inject the host's Git identity without mounting credentials or the
+      # rest of ~/.gitconfig into the container.
+      GIT_CONFIG_COUNT: "2"
+      GIT_CONFIG_KEY_0: user.name
+      GIT_CONFIG_VALUE_0: ${OPENCODE_GIT_USER_NAME:-}
+      GIT_CONFIG_KEY_1: user.email
+      GIT_CONFIG_VALUE_1: ${OPENCODE_GIT_USER_EMAIL:-}
+    volumes:
+      # Mount only the safe harness inputs OpenCode needs. Never mount the
+      # harness root: it also contains local credentials and runtime state.
+      # The launcher writes a per-session copy with optional MCPs enabled only
+      # for the selected tool profile. It contains placeholders, never secrets.
+      - ${OPENCODE_RUNTIME_CONFIG:-./opencode.json}:/opencode-config/opencode.json:ro
+      - ${OPENCODE_CONFIG_DIR_HOST:-./.opencode}:/opencode-config/.opencode:ro
+      - ./README.md:/opencode-config/README.md:ro
+      - ./docs/lab:/opencode-config/docs/lab:ro
+      - ./scripts/security:/opencode-config/scripts/security:ro
+      - ./scripts/artifacts:/opencode-config/scripts/artifacts:ro
+      - ./scripts/notion:/opencode-config/scripts/notion:ro
+      - ./scripts/github:/opencode-config/scripts/github:ro
+      - ./scripts/local-preview:/opencode-config/scripts/local-preview:ro
+      - ./scripts/lab:/opencode-config/scripts/lab:ro
+      - ./scripts/quality/dagger-source-policy.mjs:/opencode-config/scripts/quality/dagger-source-policy.mjs:ro
+      - ${OPENCODE_WORKSPACE:-.}:${OPENCODE_WORKSPACE_CONTAINER:-/workspace}:rw
+      # Project-local skills when present; launcher sets OPENCODE_PROJECT_SKILLS
+      # to docker/empty-skills when the workspace has no .opencode/skills.
+      - ${OPENCODE_PROJECT_SKILLS:-./docker/empty-skills}:/opencode-config/project-skills:ro
+      # Mask common top-level secret files even when the selected workspace
+      # contains local ignored credentials.
+      - ./docker/empty-secret:${OPENCODE_WORKSPACE_CONTAINER:-/workspace}/.dev.vars:ro
+      - ./docker/empty-secret:${OPENCODE_WORKSPACE_CONTAINER:-/workspace}/.env:ro
+      - ./docker/empty-secret:${OPENCODE_WORKSPACE_CONTAINER:-/workspace}/docker.env:ro
+      - ./docker/empty-secret:${OPENCODE_WORKSPACE_CONTAINER:-/workspace}/opencode.env:ro
+      - ./docker/empty-secret:${OPENCODE_WORKSPACE_CONTAINER:-/workspace}/.npmrc:ro
+      - ./docker/empty-secret:${OPENCODE_WORKSPACE_CONTAINER:-/workspace}/.netrc:ro
+      - opencode-state:/home/opencode/.local/share/opencode
+      - opencode-user-config:/home/opencode/.config/opencode
+      - opencode-package-cache:/home/opencode/.cache
+      # Approval policy is host-owned. Project code and the OpenCode container
+      # may read the selected mode but cannot persist or broaden it.
+      - ./.opencode-user:/home/opencode/.config/opencode/lab-user:ro
+      - opencode-tmp:/home/opencode/.tmp
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=1g,uid=${OPENCODE_UID:-1000},gid=${OPENCODE_GID:-1000}
+    networks:
+      opencode-internal:
+      preview-internal:
+        aliases:
+          - opencode-app
+
+  # docker compose run does not publish ports. This relay shares only an
+  # internal preview network with the app while publishing loopback host ports.
+  opencode-preview:
+    build:
+      context: docker/opencode-preview
+      dockerfile: Dockerfile
+    image: opencode-lab-opencode-preview:local
+    restart: unless-stopped
+    init: true
+    read_only: true
+    mem_limit: 64m
+    cpus: 0.25
+    pids_limit: 32
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    environment:
+      PREVIEW_UPSTREAM_HOST: opencode-app
+      OPENCODE_PROJECT_ID: ${OPENCODE_PROJECT_ID:?Project ID is required}
+      OPENCODE_WORKSPACE_HASH: ${OPENCODE_WORKSPACE_HASH:?Workspace hash is required}
+    ports:
+      - "127.0.0.1:${OPENCODE_PREVIEW_PORT:-3100}:3000"
+      - "127.0.0.1:${OPENCODE_PREVIEW_PORT_ALT:-3101}:3001"
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=8m
+    networks:
+      - preview-internal
+
+volumes:
+  open-design-state:
+    name: opencode-lab-${OPENCODE_PROJECT_ID:-unscoped}-open-design-state
+  hound-state:
+    name: opencode-lab-${OPENCODE_PROJECT_ID:-unscoped}-hound-state
+  opencode-state:
+    name: opencode-lab-${OPENCODE_PROJECT_ID:-unscoped}-opencode-state
+  opencode-user-config:
+    name: opencode-lab-${OPENCODE_PROJECT_ID:-unscoped}-opencode-user-config
+  opencode-package-cache:
+    name: opencode-lab-${OPENCODE_PROJECT_ID:-unscoped}-opencode-package-cache
+  opencode-tmp:
+    name: opencode-lab-${OPENCODE_PROJECT_ID:-unscoped}-opencode-tmp
+  notion-publisher-state:
+    name: opencode-lab-${OPENCODE_PROJECT_ID:-unscoped}-notion-publisher-state
+
+networks:
+  opencode-internal:
+    internal: true
+  hound-egress:
+  agent-gateway-egress:
+  notion-publisher-egress:
+  preview-internal:
+    internal: true

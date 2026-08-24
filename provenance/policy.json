@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "rootImportCommit": "802404c1270d52c0ab2d3dd0a408a1b04d6395f0",
+  "sources": {
+    "opencode-lab": {
+      "classification": "original",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors"
+    },
+    "cloudflare-harness-import": {
+      "classification": "attributed-upstream",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import"
+    },
+    "dependency-lock": {
+      "classification": "attributed-upstream",
+      "license": "various",
+      "notice": "THIRD_PARTY_NOTICES.md#dependency-manifests"
+    }
+  },
+  "overrides": {
+    "LICENSE": "opencode-lab",
+    "package-lock.json": "dependency-lock",
+    "quality/inspect/uv.lock": "dependency-lock",
+    "docker/hound/build-requirements.lock": "dependency-lock",
+    "docker/hound/requirements.lock": "dependency-lock"
+  }
+}

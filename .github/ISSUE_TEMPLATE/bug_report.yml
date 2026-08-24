@@ -1,0 +1,50 @@
+name: Bug report
+description: Report a reproducible OpenCode Lab defect
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not report vulnerabilities or include credentials. Use SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: v0.x.y or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: Launch profile
+      options: [default, research, design, full-tools, managed-run]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction
+      description: Minimal numbered steps using synthetic data.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and redacted logs
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, tokens, personal paths, and private source.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

@@ -1,0 +1,2478 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "tracked and unignored release tree",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "ac5392a517edc908ef6a653e3246de4f5e973b82a3ac789cfe4af7bc080df0ee"
+    },
+    {
+      "path": ".github/CODEOWNERS",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "368f5ec1ecfd01861a18b1e25e0d08f10bc5454ffeb7ec97420865c06576f4f1"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "3d8349674130039e4b02b4c1b3c01b5b0b4afab629ae42eedadf3c7861b48632"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6851af372e1a61d2675a6be6534a001d8b1faa596d219d2c102f2575237465ac"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "276725a766ac23c77c4828209651010bbb3dd9fabccffa27975935e8b3445fff"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "f1022aa31a0b608df910e9f3caf964dbc7af226743276eed8b7fe80aea8174a4"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "499ad462a9c1608c0d5e16ec11b5bb7e9e7f2fd6eb804a0efa5dabb62958f037"
+    },
+    {
+      "path": ".github/workflows/agent-quality.yml",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "22006203567583dbb79c841f9bbdae9983846a73a8985a66346246cf11a5f8e0"
+    },
+    {
+      "path": ".github/workflows/compatibility.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "94c3293f1c82b69c1f1670488e2627be78cd4063f9cc863127e2760ef459374c"
+    },
+    {
+      "path": ".github/workflows/model-eval.yml",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "8da320698df3eba9c34c6d4c6e7624d86969e1573fa8eeab71c6445ee1bc5490"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "cb7066f236944384723193dd7893af46f6321e09ba54282597e259a8b91714ae"
+    },
+    {
+      "path": ".github/workflows/sanity-check.yml",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "92eaecab88fdc85e29130c0aee3ac8f067d489f13b2e1cfb36839f78961a6d0a"
+    },
+    {
+      "path": ".github/workflows/scheduled-model-regression.yml",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "f8607294c9d61deb6f475912d5d663a237ae0dfe47e0757ee180b9bb97ed0e37"
+    },
+    {
+      "path": ".github/workflows/secret-history.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "56ae3d931565f0ece7391d29678472d4503e22d8b57a08ad25b557c472fc62c7"
+    },
+    {
+      "path": ".github/workflows/semgrep.yml",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "dad416ac65cdda32ffd4c7486ca05bb4bd7227c75af60c62c062d183b43f73a9"
+    },
+    {
+      "path": ".github/workflows/supply-chain.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "f80cff949d545f3b948ea16268ffddf4b2d8691fc18ac40e2b4e2d8602a91c8c"
+    },
+    {
+      "path": ".gitignore",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "2705b83dab6f4d46299794695736557edb21ab3ff75c766f4993c6b6902a4a39"
+    },
+    {
+      "path": ".gitleaks.toml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "966be22348eeebcfe99b25720d3c703f3b020dc29df493985f7ad9fae519bb0f"
+    },
+    {
+      "path": ".nvmrc",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "55075b5ec4e8b31936cbbc282b8829116d1fd48f2f2f1856dee592a6650700ce"
+    },
+    {
+      "path": ".opencode/agents/deep.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "fd9ce15c661b9cae221bd8cd4231ff5a1a074106f21fa76b30399bd2ac3b0c77"
+    },
+    {
+      "path": ".opencode/agents/dispatcher.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "ba13e11a83bf70bb54dd4a53f71271e5fc4d494c6518f41eb1ea0152bbc8a2bf"
+    },
+    {
+      "path": ".opencode/agents/fast.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "1b2cec098fb7734e3cebaeb17fc3678d17271115c175b4eb67f46cbf3285b763"
+    },
+    {
+      "path": ".opencode/agents/lab.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "296d3caf840607392db886f30d3d258e091c7661b2ade579ce79b52db5b8919c"
+    },
+    {
+      "path": ".opencode/agents/plan.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "b1b9d39c3540c541450ec7010a8f882785f2fa11cc0ed2a34fac01a6008bfddc"
+    },
+    {
+      "path": ".opencode/agents/research.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "1f6d9769c8c6527d2a5319c37f239e175d7f11a36ad507adf89a1963ac74b200"
+    },
+    {
+      "path": ".opencode/agents/reviewer.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "269d8267f512914db06a711e9b428e90370bdffe378790113be26ae9d3973c1a"
+    },
+    {
+      "path": ".opencode/commands/browser.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "7d9fb38f45e6460877359305e7b3e900b10104491bbad521f126d3053b05dc63"
+    },
+    {
+      "path": ".opencode/commands/checkpoint.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "a337bb32d78b3a3ac2b838204022e0feb57e70c24faabae78a8565a2558829a7"
+    },
+    {
+      "path": ".opencode/commands/compact.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "9d29ed76a4355574d28ba1893b266d6fe1f8ffa404fb0d1646f87d5fa794e110"
+    },
+    {
+      "path": ".opencode/commands/eval.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "84c9b03cdec31290f4ef5c369d945ebfb8f4d21835f081107ac38eeb0a229c78"
+    },
+    {
+      "path": ".opencode/commands/gallery.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "7b3924c5e044246cf1debcfa8d4a8c349a4684cb081b68b9df608c94556b4424"
+    },
+    {
+      "path": ".opencode/commands/notion.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "c78ef95dc417515a266319702a44fa206065a5cfebe3b2a6cbfc23d97e1a5640"
+    },
+    {
+      "path": ".opencode/commands/parallel.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "13ae2244b7bbe7d4ad992e908ee945dd7198c81a933d933bb268b7df03b65e6f"
+    },
+    {
+      "path": ".opencode/commands/plan.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "f03d26353a951dd620dfde0441d08f7b10aaa32bdd02bbd4fdd35d8f5a238ac8"
+    },
+    {
+      "path": ".opencode/commands/preview.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "cc366b947800b2e82fc9e4ebfabdb7a2aa748f39f975b38d6fa4a5682d7117ef"
+    },
+    {
+      "path": ".opencode/commands/publish.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "7e267bfb1709c9a9d89d3ec625808c04062791fd0b14d611d361f5e46aad4d7c"
+    },
+    {
+      "path": ".opencode/commands/recap.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "26f15e5c662caaccc040b971d38226b4e0c713f566b377c4276259fea1c53f46"
+    },
+    {
+      "path": ".opencode/commands/research.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "c1f6e65d4372dcdf351c45c5602e40c0f2f0a204339631554298f84f698acb59"
+    },
+    {
+      "path": ".opencode/commands/review.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "0dc6462a78a48145f2d49beda4d024c5203b4c1a8dda2cc6664125b024e3f0a0"
+    },
+    {
+      "path": ".opencode/commands/rewind.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "c9d90febae74b0412a65aeb542a58fc01c05c122bdea48d87075cb7d3cc53b9e"
+    },
+    {
+      "path": ".opencode/commands/run-local.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "898ad7050e7a9f79e35c2d7fbfb954d25188539ed1eed6733ea0fa27f3500c03"
+    },
+    {
+      "path": ".opencode/commands/ship.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "46d9863f8989c454d863c73bdda81714e149e76f871405d7bd24099ba69a37b9"
+    },
+    {
+      "path": ".opencode/commands/view.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "be250c389edee86f654cde1307cfb07c8048b1160bc6faae2702795e39c7dfe1"
+    },
+    {
+      "path": ".opencode/plugins/agent-ops-lib.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "ed74f30de2653fd22cb70da042f4ff2f334efa05f68e378109374d7658fe7fb9"
+    },
+    {
+      "path": ".opencode/plugins/agent-ops-lib.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "aafa4195efa61117865d14c9a180047588eddcae81ecbc91e840960eef6ea870"
+    },
+    {
+      "path": ".opencode/plugins/agent-ops.tsx",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "736bbab9f786dc94bf95f2d31d8977b7272da2c54af5b1eecdb74b2939691f47"
+    },
+    {
+      "path": ".opencode/plugins/cache-stats.tsx",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "961079f6c4cb5375550fa392af800617b8e94c8f06f2133e83fbc620458048c8"
+    },
+    {
+      "path": ".opencode/plugins/lab-ui-lib.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "bf1b4ae766fd5fd2695c94808be3e4c96abad92bb0c4d9dfff2e09529e4bebf5"
+    },
+    {
+      "path": ".opencode/plugins/lifecycle-hooks.tsx",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "848745019ae60a69145254583261ad6d1bf13b6fcde945a50278da639418888c"
+    },
+    {
+      "path": ".opencode/plugins/run-center.tsx",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "10167d7f06bf600351c896f6a3e69adc6fce940c6ade45b409ea293a79ca294b"
+    },
+    {
+      "path": ".opencode/plugins/session-view-cache.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "0ee0ac2bc674e7348ee31ea64d74c4e1dc211c8edeac73a66f2206aa876e40ce"
+    },
+    {
+      "path": ".opencode/plugins/tool-lifecycle.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "2a72ec3b9f43f866253ece15d8227406852d98863667c39c897f0db1b1e6b9c1"
+    },
+    {
+      "path": ".opencode/plugins/workflow-menu.tsx",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "bcef79da68079272d1eb40fc0a1a2112c6bee9ea7620688a4754ecd56a9ce83f"
+    },
+    {
+      "path": ".opencode/skills/author-project-skill/SKILL.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "7a1b7e4c734181ba12c58221baafcb3c42cf3fa0c2297c2e0467f913bb145688"
+    },
+    {
+      "path": ".opencode/skills/browser-verify/SKILL.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "3ed40568aa1a88f840767f33b743e7951656e99ae55ab20e11a3468cdb3a5ea5"
+    },
+    {
+      "path": ".opencode/skills/local-preview/SKILL.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "1047453ef49d015d790c5727d9374a01fb951696ff1af09b114a936bed83a08b"
+    },
+    {
+      "path": ".opencode/skills/project-skills/SKILL.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "dfdc0d8c9f12b4e739510ad96905af8f93a0de422b1798b4c64f55af3e993a74"
+    },
+    {
+      "path": ".opencode/tui.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "fd3041f1eb74e4d6e51b38c6fbd1f36435c14d0de09fbb9ec85a29effd8cb064"
+    },
+    {
+      "path": ".oxfmtrc.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "82f2865401ee91bc0cf1a9fc53be1d6b6b13337938abd971d4e68ff650ef1aff"
+    },
+    {
+      "path": ".oxlintrc.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "9d941c60d4b2108b17c07515d3eadf9db5ea71879743db9125ab8d440dab2fce"
+    },
+    {
+      "path": ".prettierignore",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "add52e70ca71d75b34a8b5d3fdc95e74d3670c4b348da07c133650361690bee3"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "a596ce435de0c5f87258fc82a6bdcaf68385aefd93e04221d547901b070da46a"
+    },
+    {
+      "path": "cloudflare/ai-gateway.routes.example.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "e76b453a9e6013da2615cff346983d211ba002389817b98f962d89783b1e0153"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "classification": "attributed-upstream",
+      "source": "contributor-covenant-2.1",
+      "license": "CC-BY-4.0",
+      "notice": "THIRD_PARTY_NOTICES.md#contributor-covenant",
+      "sha256": "c08044d535b69ff2547088fcf9dff3c3cc425697e4ed0e243c2b328e38f02b01"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "0a85a5a52068e95f3304ba3b1a2378af9f196a72353ef740cf14d6010445c283"
+    },
+    {
+      "path": "DCO",
+      "classification": "attributed-upstream",
+      "source": "dco-1.1",
+      "license": "DCO-1.1",
+      "notice": "THIRD_PARTY_NOTICES.md#developer-certificate-of-origin",
+      "sha256": "3b5dcb57d79d0a3e75bcae32e8a0f127fc8480aaee7a3d35f0925dd97cf23bd9"
+    },
+    {
+      "path": "docker-compose.opencode.yml",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "ff8af5e59dfb0e6ece54f451e34b6d33718c8e65246d48211d065f55e8076a08"
+    },
+    {
+      "path": "docker/agent-gateway/artifact.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "409b57c07bed9b20b21a2730d4ee0088cedcf733fc053fb27bacde5f472a2d0c"
+    },
+    {
+      "path": "docker/agent-gateway/capability-lease.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "696381289de465e84037fc6c529d346f31977fb7a2d1b8a1bb046ae5b55ee055"
+    },
+    {
+      "path": "docker/agent-gateway/capability-lease.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "a517547f574c7fab147d147c01f59c32be9950cfb9ce4fd67fd7dd1b16bbcf31"
+    },
+    {
+      "path": "docker/agent-gateway/Dockerfile",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "06f663c2ebf00255e70c8d34ed2182ffbe41e25c93a86cb93d468a7ea0974d69"
+    },
+    {
+      "path": "docker/agent-gateway/gateway.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "7a33934afc333a7feabad02b706ccab58b94a3c51f09844127063e3f94fc85a3"
+    },
+    {
+      "path": "docker/agent-gateway/gateway.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "6ee4f2d8e4d39660ede2f1e965514f2375c4d562dbae56c89f3277af3855a390"
+    },
+    {
+      "path": "docker/agent-gateway/server.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "0430ffecd0193ff04743b5d6b2342389bf4a20a4b5a4543b773e9fa72da3666a"
+    },
+    {
+      "path": "docker/empty-secret",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docker/empty-skills/.gitkeep",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "5cc1e9a3aeccac94f8a915784575cc24c560243666ced446b5375d9f90a4a86d"
+    },
+    {
+      "path": "docker/hound-firewall/Dockerfile",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "35d11b1d2a7cf8f98fcd15562e050832ddb35308e413563a6e6e5bd8b349cdcc"
+    },
+    {
+      "path": "docker/hound-firewall/firewall.sh",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "9659ea25ad2769c91a82fd0129ef6318068938d68b5e6181032890d07e5d1875"
+    },
+    {
+      "path": "docker/hound-relay/Dockerfile",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "75478e6d6eef2c085bc2e7dc18c13c7cb1cc694a91510f9d63f7474dff61a49e"
+    },
+    {
+      "path": "docker/hound-relay/relay.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "3b425f1d9179457b5df916804eb79a7826d9b988cdb12a21c994cf2fc8e9dfd0"
+    },
+    {
+      "path": "docker/hound-relay/server.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "2738dd2a60a0ca8682db36fdf8b4e10bfd05945ba888b9a2ba5a67d1d33e6cd4"
+    },
+    {
+      "path": "docker/hound/build-requirements.in",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "12d95d3f58681aa8e07423fd2bf2c164f8d41af73508cbc5bf093c3b6e790f4e"
+    },
+    {
+      "path": "docker/hound/build-requirements.lock",
+      "classification": "attributed-upstream",
+      "source": "dependency-lock",
+      "license": "various",
+      "notice": "THIRD_PARTY_NOTICES.md#dependency-manifests",
+      "sha256": "9da01747328e7fc46d8b436db8aa8a22c073095b58d16a95a68ad35333db6ec4"
+    },
+    {
+      "path": "docker/hound/Dockerfile",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "4b1e00c4802bbac6d37684c844dea6c574ab0a8c0563783cf793fc0bf11d22f9"
+    },
+    {
+      "path": "docker/hound/entrypoint.sh",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "af47fe690df3a538c25c20a00188ef7a8639bb1ef537c74be0e390d64cd21725"
+    },
+    {
+      "path": "docker/hound/requirements.in",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "e14fb278465f079af869ff04a2e9c84508f6b122fe83580d77eabdda01115093"
+    },
+    {
+      "path": "docker/hound/requirements.lock",
+      "classification": "attributed-upstream",
+      "source": "dependency-lock",
+      "license": "various",
+      "notice": "THIRD_PARTY_NOTICES.md#dependency-manifests",
+      "sha256": "c7804651eaebac8583d4e98120959e6f7e87e20d9593b6fcfc254962da921866"
+    },
+    {
+      "path": "docker/notion-publisher/Dockerfile",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "88388eab920538102948dad4a284782cd949acde9e0fd9f757a18234c89e75f3"
+    },
+    {
+      "path": "docker/notion-publisher/server.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "6153ed13eb186155e2fa6c4a617d1ebfe5267675b6121f2475abf9089eaece78"
+    },
+    {
+      "path": "docker/notion-publisher/server.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "1fcea813a7bc87a998b9516842bd8396c1561fae6a080f38df790fe174b6c3a8"
+    },
+    {
+      "path": "docker/opencode-preview/Dockerfile",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "cc11af84b00085002f8243fc8e9a7d451990d31ea36d775af1ce0e625f27ef97"
+    },
+    {
+      "path": "docker/opencode-preview/server.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "2d095f8a814cd6e8551072675d3c656ce699d29d24ad8a2a66f216e6c75b203c"
+    },
+    {
+      "path": "docker/opencode-preview/server.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "7a3573ba6e27c050b12974fdeb74d0e0d69946d055e64f4959d2cdcbe2c5ffc0"
+    },
+    {
+      "path": "docker/opencode-seccomp.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "5859db3d0c48ada47cf7ee1847a25b0aa1f5ef85baa12a286fad688d3c0ee785"
+    },
+    {
+      "path": "Dockerfile.opencode",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "3da4470ba782fe4b5ee57cc64e8f48d0d9fa2b161083d7f6779a2f9ee08c0eb3"
+    },
+    {
+      "path": "Dockerfile.opencode.dockerignore",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "d88e8c67b48d78bc700c023bb67d85b980e8441db066985f2e5296b275867d48"
+    },
+    {
+      "path": "docs/agent-quality.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "6bbaff564f0d508711566062f45557261df01ec7850608c1c9297db85a097e67"
+    },
+    {
+      "path": "docs/agent-safety.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "42b06ce2a89017ed4ac4223ada21810ba51202307bcb9afa296fcbfba1c4bd00"
+    },
+    {
+      "path": "docs/architecture.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "ed656a088600e00e8a2053866a515901d174c89427c1c957ed528e591569fea0"
+    },
+    {
+      "path": "docs/beta-program.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "531fcdd3921e9e6ea34c95346c0e0e07c6c96678bcf52aee0ce1c17e4b48e8ac"
+    },
+    {
+      "path": "docs/cli-reference.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "8a3b76831a25c18369703d159d1b6c2752159ee93c153d7cc0d10c2b60eebc62"
+    },
+    {
+      "path": "docs/cloudflare-ai-gateway.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "2c746979c7b339423b2c374a9af2182a411faf6fe8dab5070efce5fc9b2ba448"
+    },
+    {
+      "path": "docs/code-reference.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "e77c8fee39ffeaa4dce4876af8b36052c3cbd8e37879b1ab095136daad1a313e"
+    },
+    {
+      "path": "docs/compatibility.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "8b8fdd634d39f4f60d2983fe171366db0be605a7d80797b29c358f5ff21c08da"
+    },
+    {
+      "path": "docs/execution-adapters.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6073ca041a775f9a484d3ca02a9cabdc30e8ed97b4c615c413264e36f740249f"
+    },
+    {
+      "path": "docs/gateway-protocol.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "dc276420c756f32cadd6f050c5db83a14ed34324b1791ebe6acd7b8d06471e13"
+    },
+    {
+      "path": "docs/lab/AGENT.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "ed60170f54b0ff8a32fa38d1854d97988fc506939dd5924207069abecefe5260"
+    },
+    {
+      "path": "docs/lab/notes/README.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "69ddac09667b707955212edd7acce89d504e5307eedb79268dcb696ae3219524"
+    },
+    {
+      "path": "docs/lab/when-to-use-agents.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "e65867b042e1bf89e0639e16fa5bce7b7eb22d9b6207be119a9de18c9a6edbde"
+    },
+    {
+      "path": "docs/lab/workspace-agents.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "3f93522fd3ad4e9749674c831c94878b44b91edd956ab01618874e259e6e801e"
+    },
+    {
+      "path": "docs/managed-runs.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "fd17f0ed352a91a94b691bdb7fafe8f7ef3ac490430aa8fac3ae26d294f3e44d"
+    },
+    {
+      "path": "docs/notion-publisher.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "e603745b4cb26907ff2a656b34653270578e394fd831a58df0255f994e9504ae"
+    },
+    {
+      "path": "docs/packs.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "e658041fad0647e9ab4b6ed0e6acec5c9f3b563f4e5d0680d7d9b7cbe7630616"
+    },
+    {
+      "path": "docs/product-boundary.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "e75ced7b9cb3e13dba6aa05bb4ccd416e29145da44195ea34d2cd4ebc3f09547"
+    },
+    {
+      "path": "docs/project-contract.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "57103624aab8d48c014f47abd75400ac7eb57670f1c76f328c9a9397a5e843a2"
+    },
+    {
+      "path": "docs/public-release.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "c6da9e016c45721afb297feff26018fdd4f82aabd17fb363f860d30b60487ace"
+    },
+    {
+      "path": "docs/quality-ci.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "251802a81a6c1d8e3b2a756c137bbfd35717c3ebdd496fe9b1de85a96cb656c7"
+    },
+    {
+      "path": "docs/README.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "390334fd7865778c5cd4510a0a888f9ca43670914899b3cb20c8ab69a3760625"
+    },
+    {
+      "path": "docs/release-notes/v0.1.0-beta.1.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "75b6b8879aac1a6cb0890db54f672ab052a7f7924d9823fef42fb02b860cfa6a"
+    },
+    {
+      "path": "docs/review-metrics.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "0f6673b2c863375e792820dd0eca2bfbb45de02138477e154945e59662c3f96b"
+    },
+    {
+      "path": "docs/rfcs/0000-template.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "4846ee2f39dcfc025c33a99df6eae271f620f39b0ca1d16544968d70dfdd4aa7"
+    },
+    {
+      "path": "docs/strict-mode.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "f751834d81ad45fd1c5668cf87188b6610c5d89cc89204c1b81d8c2289c7b198"
+    },
+    {
+      "path": "docs/threat-model.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "9769e044b7463701e1751e0a8196150c4fa62e9b4ccffefc885cdc7a70cae9c1"
+    },
+    {
+      "path": "docs/tutorial.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "7e3f668a274b2aaf0d006d07d1b0dd32271fa4887a25bdbbc0c5791dd3ffe9c8"
+    },
+    {
+      "path": "examples/packs/coding/opencode-lab.pack.json",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "e10c0c1c5695183762ea5a762850b04e80fefd94ed0fcac2b192653e94b56a2c"
+    },
+    {
+      "path": "examples/packs/coding/opencode/agents/example-coder.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "ce856d1f03c6737cc8a6e966e5295389ebd7c032a3f793803f36a00af271864b"
+    },
+    {
+      "path": "examples/packs/coding/opencode/commands/example-code.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "5e480c8b05b09ec3a4b8572260323c11a50f92158d752c0181cbbe6dfec9cd9c"
+    },
+    {
+      "path": "examples/packs/research/opencode-lab.pack.json",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "e0b57e2c946a0cfafc044e8059e8bf915698b60a2635e39e7ba9bd2a8de83e38"
+    },
+    {
+      "path": "examples/packs/research/opencode/agents/example-researcher.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "dfcd268ab3aa06124b89fb983bb5d7b23e71b12852fff53fce0df3bbb501299a"
+    },
+    {
+      "path": "examples/packs/research/opencode/commands/example-research.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "386147c74a0b6b4bb299129c6b68c22dbb2fdd080be9b1045cd49dcaa8ac2cbd"
+    },
+    {
+      "path": "launch-opencode.command",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "a9b9d8320f06bb8b3e3e4cae59cbf3b165a41bf2f310622d15f81f4650d860d5"
+    },
+    {
+      "path": "LICENSE",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "1c577eaf5062745f86c37fba63188f57155a10c1e29ac853d0695ad911d213da"
+    },
+    {
+      "path": "migrations/manifest.json",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "dff5e34369b1a8f0d962c7e7cb592cf70a448f544b6c5e4c7be765dccb30de2c"
+    },
+    {
+      "path": "opencode.env.example",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "21df0ba6be661b2f244d455d1d8e53486d6a7b80d82d00c7c97ed79beb2a70b1"
+    },
+    {
+      "path": "opencode.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "64eda23eedda6e3b09e0f6b4c59bbbd41d896ba1a707ac7b20e8c1cdb95fb03c"
+    },
+    {
+      "path": "package-lock.json",
+      "classification": "attributed-upstream",
+      "source": "dependency-lock",
+      "license": "various",
+      "notice": "THIRD_PARTY_NOTICES.md#dependency-manifests",
+      "sha256": "6321b32f3cc27c315fd9375c269527740f602f9859f6712a1dcefef9e3630f30"
+    },
+    {
+      "path": "package.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "844536b9175daf936fd5036a5617971618ed885e51ee5b83f069545b5cb1f8d4"
+    },
+    {
+      "path": "provenance/files.json",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": null
+    },
+    {
+      "path": "provenance/policy.json",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "fc714e61385e3bcfa6dc8e0f85a4da5d2c2bbd8185e3d0f62e1159fd653b2a21"
+    },
+    {
+      "path": "quality/contracts/coding.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "77d15154ae9185c1f0ea02026deb2515dba9f77adb71ab1a78af363c0b5fe7d2"
+    },
+    {
+      "path": "quality/contracts/README.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "ee044cfe2c7df865ac66904688634ccca06df066b4886610f22374f8c1e13394"
+    },
+    {
+      "path": "quality/contracts/research.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "9b3992c0aa4c74dc49ee775ea352c557fa86571481b4fc4839e0d7445b9bdc37"
+    },
+    {
+      "path": "quality/inspect/.gitignore",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+    },
+    {
+      "path": "quality/inspect/evals/agent_quality.py",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "b06b16e3a8caa99d1c24ea477a12d9cc2b091cf1f576fedee7639b96ad66fa3d"
+    },
+    {
+      "path": "quality/inspect/evals/routing_policy.py",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "c0e4189a9bbe206425b57279fef00a0d4235200fdd3a528668a4c428bb7c445c"
+    },
+    {
+      "path": "quality/inspect/evals/trajectory_harness.py",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "751893ade859ee611cfcf4c45eddffe31e027b698cfd292135a58ff3c73634ae"
+    },
+    {
+      "path": "quality/inspect/evals/trajectory_quality.py",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "a6ac3783ffa9e1c16414b128be689b1632d8b02fc7d911f71dfe082da3a79f54"
+    },
+    {
+      "path": "quality/inspect/pyproject.toml",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "b202fa8937fb084bc42c8ad97d319cea3ffc3ef1718553aeadcb82c154c9cfb1"
+    },
+    {
+      "path": "quality/inspect/README.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "60fce20b175a19bc5a04ad787b602aba96a413c48dcaa417495b11018e9393cf"
+    },
+    {
+      "path": "quality/inspect/tests/test_agent_quality.py",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "95979454f98311087d1129e44840baf1d6e4eb4f8af29541d48ab2d555f28366"
+    },
+    {
+      "path": "quality/inspect/tests/test_routing_policy.py",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "b501be4e3272d81391508aef9d02d8af1b639f4f77d5b6488c3805aed8487b68"
+    },
+    {
+      "path": "quality/inspect/tests/test_trajectory_harness.py",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "b8778ab886a3b500f317cf060253cc09c2e8ed2167d9e8da29b78f93ed336f75"
+    },
+    {
+      "path": "quality/inspect/uv.lock",
+      "classification": "attributed-upstream",
+      "source": "dependency-lock",
+      "license": "various",
+      "notice": "THIRD_PARTY_NOTICES.md#dependency-manifests",
+      "sha256": "d9b75d59bd14e3eda575ca12147f534d6f6fc262c7b0d5be447b6f9195c7f89e"
+    },
+    {
+      "path": "quality/model-routing.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "d784339b14969f455d1c70c8342d3fca00bb5e4856ef586369af6901e33128af"
+    },
+    {
+      "path": "README.md",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "a4dc43a059b7bf87943c2d5333c59fbc01759966861a145064f2632052a80900"
+    },
+    {
+      "path": "schemas/project-v1.schema.json",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "34df6dd9235ed31d18ea62f490aab94ff975a9e9780f32b9b7362bef4d68174c"
+    },
+    {
+      "path": "scripts/agent-doctor.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "0fb3ddd4186ccaa4878dbb8e86b8e1d89d6c1b26b853020c3bc3589d12cd3533"
+    },
+    {
+      "path": "scripts/artifacts/gallery-server.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "ef0a7148a517470bf6c7742d0f0ac16e9d21520de2acb05833d8ccf7e480ba07"
+    },
+    {
+      "path": "scripts/artifacts/gallery-server.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "9ab70710a7f16b5d70c66dd2303c1899d3f89ec78efa1c89577265144426131f"
+    },
+    {
+      "path": "scripts/artifacts/list-gallery.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6029b983b01bfa46d9705a5c30bdf8f2079e70f096edbf09161b069affe6401c"
+    },
+    {
+      "path": "scripts/cloudflare/apply-ai-gateway.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "14a61747f1057eecf9aa77e4a3f629f1354722b7330d8eba23e126175567a406"
+    },
+    {
+      "path": "scripts/dagger-quality.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "01f60fbd5005f867c5f2675a8c886e68db43da58ad5f561e1b637408a9a81d10"
+    },
+    {
+      "path": "scripts/github/mcp.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "75984e0e8a2aa089073aa608f2598c7fe6e2f7827d5c2f1902539a7384239b99"
+    },
+    {
+      "path": "scripts/github/publish-boundary.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "348b5c9b15f05982dd4f02d761d6c1644238402134a6276afc0ec42710c9c309"
+    },
+    {
+      "path": "scripts/github/publish-boundary.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "f35f087d684bce163fd2ea16aa3f2585dcd36bba285d215e291a5790e9713ae5"
+    },
+    {
+      "path": "scripts/github/publish-relay.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "3a8297f93f8b05f14c238ba934206b62866017827863df7defbdf353e63cc389"
+    },
+    {
+      "path": "scripts/github/publish-relay.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "3c435aeca6f37ab62bc7e466bfb817b005965b7abadaec25f206142b4e889fb4"
+    },
+    {
+      "path": "scripts/hound-config.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "bee7e6336781d37dc16870c6799f9fe7a32de17aa08aafc8cefad44ea34b67f8"
+    },
+    {
+      "path": "scripts/hound-relay.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "e0f74c5c64beaa5efb872640c406f18cde10afc9de181b7f6c17a55db892bef0"
+    },
+    {
+      "path": "scripts/lab/background-ship-worker.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "e6c4a77b42179fd0fc8eea53b26427df675e578112475564c016e16d3bc6fd8a"
+    },
+    {
+      "path": "scripts/lab/background-ship.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "8628431d4359657c41fee4836e22be15b69830e913be074e12bec5701176a22b"
+    },
+    {
+      "path": "scripts/lab/browser-mcp.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "6c0fdf3444d1ce332227456ada9a54cb0787b785e9ecaae57a14ea5c69b1af44"
+    },
+    {
+      "path": "scripts/lab/browser-session-relay.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "73d64277013897d7b18ed818644114bea19de78d2c9244069dd666ba5c54400b"
+    },
+    {
+      "path": "scripts/lab/browser-verify-relay.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "2b4949eff796bb243e1456dc8858bf6704b5eff2c3fc06330f8aa7fdc7ac455b"
+    },
+    {
+      "path": "scripts/lab/browser-verify-relay.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "80ae6bbd727ed2e6beb2cffecab2534624a709daf8bda39502a44268eb3003de"
+    },
+    {
+      "path": "scripts/lab/browser-verify.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "aa55b4a2dcecf5305e71457046977c1252f490cc39863dacba5d7697c3704325"
+    },
+    {
+      "path": "scripts/lab/checkpoint.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "6215085d46ea4c18e20476d5fdbdd3be6cf398bd86df57ae6419c82609f10726"
+    },
+    {
+      "path": "scripts/lab/checkpoint.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "d2de09ea7085cc60d7c2fc1101284a4449440c887d17f3cf5f08b00052939601"
+    },
+    {
+      "path": "scripts/lab/compatibility.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "097027a7f8bc7a70d794c8fd62bd9a8614bdaa8e1a037be1d4bb5a79eb63b27a"
+    },
+    {
+      "path": "scripts/lab/compatibility.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "7cc1cdd73485da59a8f57bf75e0c20516c4682bd86d4522a482364ffe07cc680"
+    },
+    {
+      "path": "scripts/lab/execution-adapters.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "c5db96f58f3f60509d2f46fe6970f03d25080f306005735837967d1874a47b52"
+    },
+    {
+      "path": "scripts/lab/execution-adapters.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "8e477f2a88a3aaecc7205cc8fd862b22a1c26176755a4a3342af0018ec6ba644"
+    },
+    {
+      "path": "scripts/lab/fleet-browser.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "5be8b3d222799a346ca793cd903c0a1b74a99507caa57945e54d50e9591c4346"
+    },
+    {
+      "path": "scripts/lab/fleet.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "8e85dc9f2789ae457a415c2986ffe82bad5354f17d151f9ca44ab8b724fbf373"
+    },
+    {
+      "path": "scripts/lab/fleet.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6aede3cd10b6b5ae746dcb0879768f53f5d3d6d63eb8ad94595ebc7b0dd115ec"
+    },
+    {
+      "path": "scripts/lab/host-state.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "76f83af20bc013b4b2a93845380238860645f052941e9b2bdbc8dd80513a4471"
+    },
+    {
+      "path": "scripts/lab/host-state.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "d79f395931c1f05073b58a06252ece9617c84e484004b602d0a0bf828f9b9352"
+    },
+    {
+      "path": "scripts/lab/interactive-routing.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "27d7ab9a9fe4a1dcedcbd1e9acfa58a3e919093e629431f9275b2562e6a2f0de"
+    },
+    {
+      "path": "scripts/lab/lab-ui-lib.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "db752536c4dd13d0a0bafdaf34059bd630a168c75f497060761b3d313a27da76"
+    },
+    {
+      "path": "scripts/lab/launch-snapshot.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "1666d94002d150da9181d722a693836eac655b06b21d6dcaabcf0cdf929df061"
+    },
+    {
+      "path": "scripts/lab/launch-snapshot.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "de959b98ae9e27301200d582d47fb0c0becfc6dde3ff56f3086509a7ceb170d3"
+    },
+    {
+      "path": "scripts/lab/opencode-launcher.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "0ee8a00e07c2a18ef0883fcdf7f5effcc61ad0c83de33f4132716c637eb3c296"
+    },
+    {
+      "path": "scripts/lab/pack-loader.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "786c2e77b7d3a06ba53ad837b4701e83f9b547561f1eed43996e14a0d203fd2f"
+    },
+    {
+      "path": "scripts/lab/pack-loader.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6bcf4334b012c3cefa4884522aa0c24a20c99f4dd10ee8cf6723bc4cc8c3bda8"
+    },
+    {
+      "path": "scripts/lab/preview-launch-policy.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "862ead2dc46cc6a98599f70fe97de107d66b9355248974129b0e42689dae58fc"
+    },
+    {
+      "path": "scripts/lab/project-contract.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6e110629d3d270953a206a40bc5de990a7f40611a0150110be1c10f8c72949a1"
+    },
+    {
+      "path": "scripts/lab/project-contract.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "d520ea9ec187e73972ec5b6b53309a89bdeab75dfd7f5175f2a8fa8d9fd8820b"
+    },
+    {
+      "path": "scripts/lab/project-lifecycle.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "ec829c143e11f455fc7c23e6b6b9450aacff29ba349a1b5d85e1636ad526cd67"
+    },
+    {
+      "path": "scripts/lab/project-lifecycle.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6e1713239fcfb94c89a5ff3bfd91fc105930f039e924aa4869e952bb2b5c4c2c"
+    },
+    {
+      "path": "scripts/lab/project-preflight.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "92aca5ac8dcc759b05f072d0af5aefe5c03bed35ed67b17eab2af4c765f15229"
+    },
+    {
+      "path": "scripts/lab/project-preflight.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "f3a48c03cedd38df9d70c0d5931d61697d348a3ca531a2fc504ba0eef71ea05c"
+    },
+    {
+      "path": "scripts/lab/prune.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "7f1205e35593433693e150af568d939a94e70d4587c332da1ac7a478050e03dc"
+    },
+    {
+      "path": "scripts/lab/prune.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "babbff0805c1a3887bb8cbcd76d3f7954f84b7420dd5cf91ba1b709e2312e537"
+    },
+    {
+      "path": "scripts/lab/sandbox-run.sh",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "5e68b09108132092dc88544e1c8d1568e269b83f5579c9fd13c9c8997babc976"
+    },
+    {
+      "path": "scripts/lab/seatbelt-lab.sb",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "d9304bff771639386e1f9734bfcf6aabdcaef63bafc4414d9773f523883570ff"
+    },
+    {
+      "path": "scripts/lab/seatbelt-run.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "5af7aa5f8c9cd2e63521610f759e70522a1af3de9064928beb419279e3bb5754"
+    },
+    {
+      "path": "scripts/lab/strict-doctor.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "309744c2718d1bdf003d71ddfc3713736f05acb6425d20f6f40a70eda085da43"
+    },
+    {
+      "path": "scripts/lab/strict-doctor.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "e16ba3dad5c65e54f6ca1bd394fec20f0ca5eb2e186041ad7ed110bdb75d17fb"
+    },
+    {
+      "path": "scripts/lab/strict-export.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "d187f576cf3262f4b7161354187620a0f0f94a060ad88e8d02b765730dd11a3a"
+    },
+    {
+      "path": "scripts/lab/strict-export.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "12008725185abf5515e6e762f59bb15cf0b8dfd0ce49fd79e0eaf49f70f3965e"
+    },
+    {
+      "path": "scripts/lab/strict-run.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "4e4935ca7cf00025106d870b0864db61595de512959aebf70895ba05289718ab"
+    },
+    {
+      "path": "scripts/lab/strict-run.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "800c0dca1c7be51afa80edb1dfbb0647e0278bc7c9b2c9bdad3c640ba76000a4"
+    },
+    {
+      "path": "scripts/lab/tui-performance.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "e5311f8bba8b084209a1e2b09eb602c8f7d02a8340b4935c0fb83fa011568d94"
+    },
+    {
+      "path": "scripts/lab/update-manager.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "d459373f45c698bb2a389b480dd7e89f9cb07888ceb3534453563e2b24855293"
+    },
+    {
+      "path": "scripts/lab/update-manager.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "1de3551fdd9b92d0ec85c42fd6a1033466639324557ba4a7045cebf50d13e735"
+    },
+    {
+      "path": "scripts/lab/verify.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "37b9dbbe34f71ac171a3b5e327c70b322fc73db7649364cc1fd7a861a1832a27"
+    },
+    {
+      "path": "scripts/lab/workspace-agents.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6d36284a21688c444148c21eb120f97ffe7c9e194f1c3f88bce6c39a6dc784a0"
+    },
+    {
+      "path": "scripts/lab/workspace-registry.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "b9fc0ab1e31808769e7ee63b2a92ccefb0988e5566055dae593280ce44238e64"
+    },
+    {
+      "path": "scripts/lab/workspace-registry.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "33b76a49431d917cca22ba68bd04a2e4015c2c5a55b82861a514d8dd96d60d27"
+    },
+    {
+      "path": "scripts/local-preview/check.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "d9a758fe06660518808fb03508c30b291d462a769b3b088654ef2d4ca4776c75"
+    },
+    {
+      "path": "scripts/local-preview/ensure.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "46d87b688195ef3c0639ea8545458462afa00faa52da32974f58631e7a9ddb39"
+    },
+    {
+      "path": "scripts/managed-task.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "0a7a516120ffc1b84d1269feb06d4b5aa62dbcc06de74a6abad85a69ec2e09be"
+    },
+    {
+      "path": "scripts/notion/publish.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "c3ad84c5c4c951eec831ccf79757c8d1657101d161078a802b87bac52995e7c0"
+    },
+    {
+      "path": "scripts/notion/publish.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "916e484b1c2a431fb4bb53d146f3c4170a36bc9acbf530d636125ec6e22d2030"
+    },
+    {
+      "path": "scripts/opencode-entry.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "91b96d6e7ec3a3e68f0d2988d7336c991d5acbad74eebbbe0c1773732506a8a2"
+    },
+    {
+      "path": "scripts/opencode-preferences.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "1125b9409cd11bcecf2169ec41a4dd384a193148626f41124e4803551d5f37a6"
+    },
+    {
+      "path": "scripts/opencode-preferences.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "b19ea41251e2526fde1b3e4a31bbc2d5532be48bf158f14c5e81be628815bfa5"
+    },
+    {
+      "path": "scripts/opencode-routing.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "3ccab97e6eb7022e022b1f41dc13603fb59f7f433b3220976d9f451e95e6fc6f"
+    },
+    {
+      "path": "scripts/opencode-routing.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "c261f650969c0422cdbd7b99c79dfbfc915c10c8e62768008bc0aefb58e38a16"
+    },
+    {
+      "path": "scripts/opencode-setup.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "1099f479e9e97eeb9542184b9551491e32dda2312439a735012b38336b1177de"
+    },
+    {
+      "path": "scripts/opencode-state-init.sh",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "5bf586f3330798077ad4a6968a9551c96404ff37ed053984f590b310a7b70396"
+    },
+    {
+      "path": "scripts/opencode-tooling.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "515ea09c34b8c2c4ca24234a388eec090cd86886198382a50edbc2f3f3209bb1"
+    },
+    {
+      "path": "scripts/opencode-tooling.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "89502fbe59970288a403fcff5a89288b015274a2c0595a5f62da564eba8533ac"
+    },
+    {
+      "path": "scripts/opencode-tui-merge.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "49cc1fd00c3422b40add1d6bbc531dbb31b1e05e0212a91f79746ef92350887d"
+    },
+    {
+      "path": "scripts/opencode-tui-merge.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "bcc7f82e0fa84542c01c3879a990bc9705678938070763bcc40f97ef8b54b5f3"
+    },
+    {
+      "path": "scripts/opencode.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "6ca600326d1e82dd8a744c803e04615856c8928299281c8befbedc7625eb1434"
+    },
+    {
+      "path": "scripts/openpets/relay.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "2fbd6ecaad48807a0c788944f34d1accbe3de4167d37fb57b6327589ce9f55d2"
+    },
+    {
+      "path": "scripts/quality-alerts.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "53cd2d9ffef9e7a705fb9d95afc2381f5a0ffaae06af6363ec8ba31772044034"
+    },
+    {
+      "path": "scripts/quality-controller.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "beadde350356af86cd55147e46e20f6d5f2ab4d47f116e712c2972268c0eddf2"
+    },
+    {
+      "path": "scripts/quality-lib.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "10fad361e5e302be94edca78100d0f4dbbfa9c98fafc9589e769b97d4c0e6841"
+    },
+    {
+      "path": "scripts/quality-lib.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "e3e60c9e2eed7b5d81f5c35f9f9812d08360d62c3e5d33a8cbdd103f5db4e0af"
+    },
+    {
+      "path": "scripts/quality-mcp/handler.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "029ea1f0c3a0810fd29c5798651aba4a75052f0355d7faacdfd17a5932fa67e5"
+    },
+    {
+      "path": "scripts/quality-mcp/handler.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "6a77324ec31bcbb40c4ae07ba19391cd4193209d568f8a9ffc568fbb2cce1f40"
+    },
+    {
+      "path": "scripts/quality-mcp/http.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "496432b7d782d7b2e30cc722d79e28ac2fd8c7c133592e774d69f75d831cda5f"
+    },
+    {
+      "path": "scripts/quality-mcp/http.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6e55a1007cfe3614a94ba7425694b8fe870adce5fc673b165d617d067552d614"
+    },
+    {
+      "path": "scripts/quality-mcp/run-center.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "dee93dbf6ac0efaaad6585fb321d01a08a912fe76e7e18cef038a4c71af3eee1"
+    },
+    {
+      "path": "scripts/quality-mcp/server.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "a6bf4b46d119b9d501257a3c9731aa1e9db6cfcf9fe44341d77f7f63080b025d"
+    },
+    {
+      "path": "scripts/quality/agent-doctor.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "174d08a8408514a861c78ee2d30c062a4956c9b2022a3c7d0bb21aa213e6c0d4"
+    },
+    {
+      "path": "scripts/quality/agent-gateway.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "63b1a0e84d25dd963b90a1a2c907404183123db55d43207780cfe9477260486d"
+    },
+    {
+      "path": "scripts/quality/context-pack.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "af2febecc9ddb1d2615000c28bce4379b5446690bdbd1bca593f2f4e034b53ab"
+    },
+    {
+      "path": "scripts/quality/context-pack.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "50ddf2f9916981ac659d1d6c8db091942ce5d46d1ebfa5e8cc4a98d124e7c7b7"
+    },
+    {
+      "path": "scripts/quality/controller-integration.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "cd1e9dc630b1549d105e20d991579c58a426080958f225b6dba6e57ed8d785de"
+    },
+    {
+      "path": "scripts/quality/dagger-source-policy.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "281d026895320eda08fa3b168493a5c522669b4a1debcb01fcc39609f3b07ae9"
+    },
+    {
+      "path": "scripts/quality/dagger-source-policy.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "b9b5717b915c638fea808099b636cdcea4b9f320981d7383e40db3fb0ec43924"
+    },
+    {
+      "path": "scripts/quality/durable-state.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "c75a7cb274e86755f2a628c43cbaa38180a9c9165bd1a6d76d6d4761dbd43474"
+    },
+    {
+      "path": "scripts/quality/durable-state.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "08d76501ec2506bda04d87b811004394cf23fd9b1c9008b3e616d63c8f32e991"
+    },
+    {
+      "path": "scripts/quality/implementation-checkpoint.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "5b4cadf444ab0021ab628f7d1fa2ac9a85e2070b2d08268d475e888e17215a1f"
+    },
+    {
+      "path": "scripts/quality/implementation-checkpoint.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "77d6a96ed0c9c9cbf90057af88323cb6626a18fa7c9747b068beaa45bc10fdc1"
+    },
+    {
+      "path": "scripts/quality/model-registry.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "df416872adbe2f563f9d5914cd68260f9b2d8188ebc64fa0b29acdc8eeea9244"
+    },
+    {
+      "path": "scripts/quality/model-registry.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "d0255a8c67bfbf1c12cfe7506f83b3444c327c32db1f774e65b88b425fa278d1"
+    },
+    {
+      "path": "scripts/quality/parallel-synthesis.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "d63e398acab64d75822bc17070479394936bacf6ba6425c1c3dbaa45b5c83c90"
+    },
+    {
+      "path": "scripts/quality/parallel-synthesis.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "338281e13c238879244891941c126ae9ee089c6f71f8de57eb0dbb37c8dbcb30"
+    },
+    {
+      "path": "scripts/quality/phase-telemetry.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "df34fe379db803ef0767e23494325b4a03d2b1209264ab932503dad318b8ba0f"
+    },
+    {
+      "path": "scripts/quality/phase-telemetry.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "c9b7e3a8d8d6f910008768612aadf094c961412d9811a8f119f6f6ae504ba25a"
+    },
+    {
+      "path": "scripts/quality/reviewer-qualification.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "4e3500568acd6a2c6d182dc0c16a96f79accd59e4c6395f5666296c4960e54c2"
+    },
+    {
+      "path": "scripts/quality/reviewer-qualification.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "95f702508512adf19a2f6294cbe58bff92b996c36f71ea1c9fcb4a1eee7c83b1"
+    },
+    {
+      "path": "scripts/quality/routing-envelope.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "10ede24ea1596370115a851fea2c26122ad3386c93795fd24617a69b34c990cd"
+    },
+    {
+      "path": "scripts/quality/routing-envelope.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "1d22420a33907f8ef04b62590f8c9da05a7a1dd08f2184f1abea37506b7436e4"
+    },
+    {
+      "path": "scripts/quality/run-artifacts.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "4732fa6ca380c9589d6c4fbff6c66e86fe7f7f93fe84c81adf0f9e86f15ccc94"
+    },
+    {
+      "path": "scripts/quality/run-artifacts.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "3f482c63f54d29d585d8290d63e065ea5b7d7b50ff71c3f6fec3e0042961e04c"
+    },
+    {
+      "path": "scripts/quality/run-control.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "42692fc497fb94961384226227979ad5d53e37026a2795232ca7bf3bd1d6f888"
+    },
+    {
+      "path": "scripts/quality/run-control.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "f3ce86b4ef1fd19de10cacb89e8937cfbe3560b237f9bb0fdb0c29d651e8517c"
+    },
+    {
+      "path": "scripts/quality/run-notifications.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "b4cd80c836bae6716cd676e86539ec87e52c80d6a82771c5268bea957169579c"
+    },
+    {
+      "path": "scripts/quality/run-notifications.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "08616bea33367433ac0370ea95987a345c5a329d4448b0bf21262c4240fa3cfb"
+    },
+    {
+      "path": "scripts/quality/run-outcomes.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "b6ebfadacce072e052a7fa2c0b344c45f83534b8b9f689d5dbe7dfcfdecab5aa"
+    },
+    {
+      "path": "scripts/quality/run-outcomes.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "4edea063779bbef6903e1f088c6c5fc958caae051146dd00c97fbe2765ef7c0e"
+    },
+    {
+      "path": "scripts/quality/run-service.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "876899be9dbbe523027df7f0bd98f9efdab949f9083ecc16dcde11da32db06a3"
+    },
+    {
+      "path": "scripts/quality/run-service.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "a10eb3cdfc6b4494e73e3655eff3b1e3c1f64bedd18325c5463eccb6d7544383"
+    },
+    {
+      "path": "scripts/quality/run-view.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "af0911106138b9d750605730b78605ea7fc849b9b88c4b77e389f014962ae185"
+    },
+    {
+      "path": "scripts/quality/run-view.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "36da912cb1334ebc8d8126717847ea23faa23bbad06dfa03d817cf49c1c82523"
+    },
+    {
+      "path": "scripts/quality/safe-git.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "e79dea76316541b43f84d49aba4eda85d1ecb75965be3901e412d77234738306"
+    },
+    {
+      "path": "scripts/quality/safe-remove.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "bddf8c5297b48238b9708bea1b5af016fbdea48e4df54e5c7b3462bb63b989a8"
+    },
+    {
+      "path": "scripts/quality/security-boundary.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "2a80cee8c1ad39a09ce80e448c6ac7ace71661bac86f222be4f012533ee6f9dc"
+    },
+    {
+      "path": "scripts/quality/visual-evidence-lib.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "59e0005e3a5036cd45bc4cf75ca696dae43496cb4f6643cb4b9bf36dfa51261f"
+    },
+    {
+      "path": "scripts/quality/visual-evidence-semantic.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "8fb0d487a13714573ea3472e4ac7e2b3de3ab05997b5bde3321eba6702905910"
+    },
+    {
+      "path": "scripts/quality/visual-evidence.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "c50b86ec84bacf287c7d0df7900d8286859af516e1fb493d5392a860230845cb"
+    },
+    {
+      "path": "scripts/quality/visual-evidence.test.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "6728dcdd4cbc75305e5d5c54d59c97f23401d0b0daea8d112c38c2e06bd03801"
+    },
+    {
+      "path": "scripts/release/documentation.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "8c59baafb091a1d1decb624939b696d11ecae27e5698e0584188378b770daf35"
+    },
+    {
+      "path": "scripts/release/dogfood.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "271c6d82808f0d2fd9006d65b30b6c631f0854951345f853e9a050be907d3fe0"
+    },
+    {
+      "path": "scripts/release/dogfood.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "f2d0430ac90176ba1d91a986c6efd9fb4e77c17c5981c823a8b30e243a4d2e5d"
+    },
+    {
+      "path": "scripts/release/export-public-tree.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "703777d821344b462b9da885894b1075d44c7502f0a55669d35eb0a4ec0c93ff"
+    },
+    {
+      "path": "scripts/release/export-public-tree.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "d593200133b2b65080e969e8d310e153010f5747e8615c2d09694bce8437545d"
+    },
+    {
+      "path": "scripts/release/governance-policy.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "90f11144b5a4e1cc46babc6a80e89acc55cc67b4c1b411e302e70d9f87302be3"
+    },
+    {
+      "path": "scripts/release/provenance.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "32afbf2d3653f91529cee9be8c1ce3a2db3360f1d1833934d8b3fd953ec92d28"
+    },
+    {
+      "path": "scripts/release/provenance.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6ba7473cb9ec023d434d2050b003dc542f1f1cc54677b55cce0133612644bc7a"
+    },
+    {
+      "path": "scripts/release/release-artifacts.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "9d802b44db89bb0f267b7a6e0705a27a856d058bd48b96706f41ebe699426679"
+    },
+    {
+      "path": "scripts/release/release-artifacts.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "b2ec17cb13122c9a15ad92807def59ce2d45ca27ba8edb9582db35b527786c3e"
+    },
+    {
+      "path": "scripts/release/release-policy.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "8e963397f944b34f8b0282f939738544c0baf4eed39d856c53fd5fe74370bc13"
+    },
+    {
+      "path": "scripts/release/scan-history.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "b921d67eb58a1f0114fd735fb4df043ded3e17c6263eee1179aa438145439a4c"
+    },
+    {
+      "path": "scripts/security/safe-git.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "627e15fd4c6687bc94c3160c0713e4f90ed6c15607afc22d023d0c240ad6c5f7"
+    },
+    {
+      "path": "scripts/security/safe-remove.mjs",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "afb8fde344bf0e11f030975f7226a55d75039733ccc5fe2d0699e7d26c35904c"
+    },
+    {
+      "path": "SECURITY.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "5a7bd8df6693fc708653a47d53139f7cc72ce7347c4406bae63e1db93c5ff650"
+    },
+    {
+      "path": "SUPPORT.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6ff9caea2b1a0acadff0151000c59ec6e4185889d508134c938c926c936bb2f4"
+    },
+    {
+      "path": "test/compatibility/opencode-v1/opencode.json",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "0cd2210e364be85f47138ddf5b96f9b23d88076619384d145a01083fa5e267f8"
+    },
+    {
+      "path": "test/compatibility/opencode-v1/tui.json",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "9da1c6bf7f30c7e1b808d551fb1e0ced996aa8e4e7ea77996482adf5130acf76"
+    },
+    {
+      "path": "test/compatibility/project-v1/project.json",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "8858e79f7b72bd074645c89d9280048cf40b8aeff2b92b48a1a671ebfd87209d"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "5a087396aab7c69c137e74e4a2eeb0ea9d2e11a63f8614f634c078773f97911a"
+    },
+    {
+      "path": "tsconfig.json",
+      "classification": "attributed-upstream",
+      "source": "cloudflare-harness-import",
+      "license": "MIT",
+      "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
+      "sha256": "ee8d63b763adf5e94a21a7559ee612bc91737509649ab7935967613f5e272071"
+    },
+    {
+      "path": "versions.lock",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "04f6c6cf0364d6fb67efb20980ab42c4010beea8c68b3499af471e1543931064"
+    }
+  ]
+}

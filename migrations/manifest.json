@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "releases": [
+    {
+      "version": "0.1.0-beta.1",
+      "minimumPreviousVersion": "0.0.0",
+      "stateSchemas": {
+        "hostRegistry": 1,
+        "durableRun": 1,
+        "artifactIndex": 1,
+        "qualityController": 2
+      },
+      "migrations": [
+        {
+          "id": "unified-durable-runs-v1",
+          "automatic": true,
+          "reversible": true,
+          "description": "Adopt legacy controller, background, and fleet records into the unified durable run service without deleting their source records."
+        },
+        {
+          "id": "project-scoped-host-state-v1",
+          "automatic": true,
+          "reversible": true,
+          "description": "Adopt legacy host registry and preference files once into project-scoped host state."
+        }
+      ]
+    }
+  ]
+}

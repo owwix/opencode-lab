@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose a scoped public-core improvement
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the generic user problem, not a company-specific workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and private-pack option
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Security and compatibility impact
+    validations:
+      required: true

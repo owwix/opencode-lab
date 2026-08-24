@@ -1,0 +1,62 @@
+{
+  "id": "research",
+  "version": 2,
+  "description": "Traceable evidence required before a research agent can publish a synthesis.",
+  "requiredEvidence": [
+    {
+      "kind": "synthesis",
+      "minCount": 1,
+      "description": "The finished research brief or report."
+    },
+    {
+      "kind": "sources",
+      "minCount": 1,
+      "description": "A bibliography or source ledger with stable references."
+    },
+    {
+      "kind": "traceability",
+      "minCount": 1,
+      "description": "A claim-to-source map or research log."
+    }
+  ],
+  "checks": {
+    "taskBinding": {
+      "required": true
+    },
+    "provenance": {
+      "requiredByKind": {
+        "synthesis": ["sources", "traceability"]
+      }
+    },
+    "nonEmpty": true,
+    "minimumBytes": 16,
+    "allowedExtensions": {
+      "synthesis": [".md", ".json", ".txt", ".html", ".pdf"],
+      "sources": [".json", ".jsonl"],
+      "traceability": [".json", ".jsonl"]
+    },
+    "dimensions": {
+      "enabled": false,
+      "requiredFor": [],
+      "minimumByKind": {}
+    },
+    "contactSheet": {
+      "required": false,
+      "requiredWhenKindsPresent": [],
+      "coverageKinds": []
+    },
+    "researchSemantics": {
+      "enabled": true,
+      "minimumSources": 1,
+      "minimumClaims": 1,
+      "requirePrimarySource": true,
+      "requireClaimIdsInSynthesis": true
+    }
+  },
+  "completionCriteria": [
+    "Every material claim can be traced to at least one recorded source.",
+    "Source and claim ledgers are structured, use unique IDs, and reject dangling claim-to-source references.",
+    "The source ledger distinguishes primary evidence from commentary.",
+    "The synthesis records uncertainty, disagreement, and material evidence gaps."
+  ]
+}

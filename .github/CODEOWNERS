@@ -1,0 +1,7 @@
+* @owwix
+
+/docker/agent-gateway/ @owwix
+/scripts/security/ @owwix
+/scripts/release/ @owwix
+/provenance/ @owwix
+/.github/workflows/ @owwix

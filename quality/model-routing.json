@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 2,
+  "defaultModel": "cloudflare-ai/@cf/openai/gpt-oss-120b",
+  "models": {
+    "cloudflare-ai/@cf/zai-org/glm-4.7-flash": {
+      "family": "zhipu-glm",
+      "lane": "dispatch",
+      "capabilities": ["chat", "reasoning", "function_calling"],
+      "contextWindow": 131072,
+      "requiresPaidPlan": false
+    },
+    "cloudflare-ai/@cf/openai/gpt-oss-120b": {
+      "family": "openai-oss",
+      "lane": "standard",
+      "capabilities": ["chat", "reasoning", "function_calling"],
+      "contextWindow": 128000,
+      "requiresPaidPlan": false,
+      "pricing": {
+        "inputPerMillion": 0.35,
+        "outputPerMillion": 0.75
+      }
+    },
+    "cloudflare-ai/@cf/moonshotai/kimi-k2.6": {
+      "family": "moonshot-kimi",
+      "lane": "long-context-vision",
+      "capabilities": ["chat", "reasoning", "function_calling", "vision"],
+      "contextWindow": 262144,
+      "requiresPaidPlan": true,
+      "pricing": {
+        "inputPerMillion": 0.95,
+        "cachedInputPerMillion": 0.16,
+        "outputPerMillion": 4
+      }
+    },
+    "cloudflare-ai/@cf/moonshotai/kimi-k2.7-code": {
+      "family": "moonshot-kimi",
+      "lane": "frontier-code",
+      "capabilities": ["chat", "reasoning", "function_calling", "vision"],
+      "contextWindow": 262144,
+      "requiresPaidPlan": true,
+      "pricing": {
+        "inputPerMillion": 0.95,
+        "cachedInputPerMillion": 0.19,
+        "outputPerMillion": 4
+      }
+    },
+    "cloudflare-ai/@cf/zai-org/glm-5.2": {
+      "family": "zhipu-glm",
+      "lane": "review-challenger",
+      "capabilities": ["chat", "reasoning", "function_calling"],
+      "contextWindow": 262144,
+      "requiresPaidPlan": true,
+      "pricing": {
+        "inputPerMillion": 1.4,
+        "cachedInputPerMillion": 0.26,
+        "outputPerMillion": 4.4
+      }
+    }
+  },
+  "lanes": {
+    "dispatch": {
+      "model": "cloudflare-ai/@cf/zai-org/glm-4.7-flash",
+      "maxTokens": 12000,
+      "maxCost": 0.1,
+      "maxToolCalls": 10
+    },
+    "standard": {
+      "model": "cloudflare-ai/@cf/openai/gpt-oss-120b",
+      "maxTokens": 100000,
+      "maxCost": 1,
+      "maxToolCalls": 80
+    },
+    "frontier-code": {
+      "model": "cloudflare-ai/@cf/moonshotai/kimi-k2.7-code",
+      "maxTokens": 180000,
+      "maxCost": 5,
+      "maxToolCalls": 140
+    },
+    "long-context-vision": {
+      "model": "cloudflare-ai/@cf/moonshotai/kimi-k2.6",
+      "maxTokens": 140000,
+      "maxCost": 5,
+      "maxToolCalls": 80
+    },
+    "review": {
+      "model": "cloudflare-ai/@cf/moonshotai/kimi-k2.7-code",
+      "maxTokens": 60000,
+      "maxCost": 1,
+      "maxToolCalls": 40
+    },
+    "intelligence": {
+      "model": "cloudflare-ai/@cf/zai-org/glm-4.7-flash",
+      "maxTokens": 8000,
+      "maxCost": 0.2,
+      "maxToolCalls": 0
+    }
+  },
+  "rules": [
+    {
+      "agent": "dispatcher",
+      "model": "cloudflare-ai/@cf/zai-org/glm-4.7-flash",
+      "priority": 100,
+      "risk": "high",
+      "reason": "Dispatch only classifies and launches runs; use the fast tool-calling lane."
+    },
+    {
+      "taskPattern": "(?:security|authentication|authorization|tenant|secret|credential|permission|migration|deploy|production|billing|payment|refactor|architecture|debug|regression|incident)",
+      "model": "cloudflare-ai/@cf/moonshotai/kimi-k2.7-code",
+      "priority": 90,
+      "risk": "high",
+      "reason": "High-risk or failure-recovery work gets the frontier coding lane."
+    },
+    {
+      "taskPattern": "(?:vision|visual|image|screenshot|multimodal|pdf|ocr|long[- ]context)",
+      "model": "cloudflare-ai/@cf/moonshotai/kimi-k2.6",
+      "priority": 85,
+      "risk": "medium",
+      "reason": "Long visual inputs use K2.6's vision and context capabilities."
+    },
+    {
+      "agent": "research",
+      "model": "cloudflare-ai/@cf/openai/gpt-oss-120b",
+      "priority": 70,
+      "risk": "low",
+      "reason": "Normal research synthesis uses the lower-cost standard reasoning lane."
+    },
+    {
+      "agent": "reviewer",
+      "model": "cloudflare-ai/@cf/moonshotai/kimi-k2.7-code",
+      "priority": 60,
+      "risk": "low",
+      "reason": "This remains the only reviewer with recorded local evaluation evidence. It is not model-family-independent from the default builder, so high-risk work is blocked by reviewPolicy until a distinct candidate qualifies."
+    },
+    {
+      "agent": "lab",
+      "model": "cloudflare-ai/@cf/openai/gpt-oss-120b",
+      "priority": 60,
+      "risk": "low",
+      "reason": "Routine Lab work uses the standard lane; complexity signals escalate it."
+    }
+  ],
+  "promotionPolicy": {
+    "minimumGoldenAccuracy": 0.8,
+    "minimumRuns": 3,
+    "metrics": [
+      "accuracy",
+      "task_completion",
+      "cost",
+      "latency",
+      "tool_errors"
+    ],
+    "note": "Do not change a route from a single anecdotal run. Compare models on the fixed golden set and executable trajectory suite first."
+  },
+  "reviewPolicy": {
+    "levels": {
+      "standard": {
+        "minimumReviewers": 1,
+        "minimumDistinctModelFamilies": 1,
+        "blockWhenUnavailable": true
+      },
+      "high": {
+        "minimumReviewers": 2,
+        "minimumDistinctModelFamilies": 2,
+        "blockWhenUnavailable": true
+      }
+    },
+    "highRiskSignals": [
+      "authentication-or-authorization",
+      "tenant-isolation",
+      "secret-handling",
+      "database-migration",
+      "production-deployment",
+      "billing-or-payments",
+      "agent-permission-policy"
+    ],
+    "reviewerCandidates": [
+      {
+        "model": "cloudflare-ai/@cf/moonshotai/kimi-k2.7-code",
+        "family": "moonshot-kimi",
+        "status": "eligible",
+        "evidence": {
+          "kind": "local-smoke-eval",
+          "cases": 5,
+          "logs": "quality/inspect/logs/",
+          "limitation": "Only a five-case smoke subset has recorded runs; expand before broad route promotion."
+        }
+      },
+      {
+        "model": "cloudflare-ai/@cf/deepseek-ai/deepseek-v4-pro-0813",
+        "family": "deepseek-v4",
+        "status": "eval-required",
+        "evidence": null,
+        "intendedRole": "Independent high-risk reviewer candidate. It must pass the fixed golden set and executable trajectory suite for multiple trials before status becomes eligible."
+      },
+      {
+        "model": "cloudflare-ai/@cf/zai-org/glm-5.2",
+        "family": "zhipu-glm",
+        "status": "eval-required",
+        "evidence": null,
+        "intendedRole": "Native Workers AI high-risk reviewer challenger; keep unavailable until its review quality is verified."
+      }
+    ],
+    "enforcementHook": {
+      "module": "scripts/quality-lib.mjs",
+      "function": "selectReviewerRoutes",
+      "referenceModule": "quality/inspect/evals/routing_policy.py",
+      "referenceFunction": "evaluate_review_plan",
+      "controllerIntegrated": true,
+      "integrationRequirement": "The controller must stop when reviewer selection throws because eligible reviewer count, model-family diversity, or implementation-model independence is insufficient."
+    }
+  }
+}

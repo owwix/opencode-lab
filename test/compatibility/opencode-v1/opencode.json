@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "cloudflare/@cf/moonshotai/kimi-k2.7-code",
+  "provider": {
+    "cloudflare": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Compatibility fixture",
+      "options": {
+        "baseURL": "http://127.0.0.1:8787/v1",
+        "apiKey": "compatibility-fixture-not-a-secret"
+      },
+      "models": {
+        "@cf/moonshotai/kimi-k2.7-code": {
+          "name": "Pinned compatibility model"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 2,
+  "id": "generic-coding",
+  "namespace": "generic-coding",
+  "label": "Generic coding",
+  "version": "1.0.0",
+  "minimumLabVersion": "1.0.0",
+  "resources": [
+    {
+      "source": "opencode/agents/example-coder.md",
+      "target": "agents/example-coder.md"
+    },
+    {
+      "source": "opencode/commands/example-code.md",
+      "target": "commands/example-code.md"
+    }
+  ],
+  "managedRuns": {
+    "example-code": {
+      "agent": "example-coder",
+      "aliases": ["sample-code"],
+      "capabilities": [],
+      "model": "cloudflare-ai/@cf/openai/gpt-oss-120b",
+      "qualityContract": "coding",
+      "taskPatterns": ["implement|fix|refactor"],
+      "taskPrefix": "Implement and verify: ",
+      "tooling": []
+    }
+  },
+  "contracts": {},
+  "services": {},
+  "permissions": [],
+  "models": {
+    "builder": {
+      "model": "cloudflare-ai/@cf/openai/gpt-oss-120b",
+      "family": "openai-oss",
+      "purpose": "Routine implementation example"
+    }
+  },
+  "verification": {
+    "adapters": ["node", "python", "monorepo"],
+    "contracts": ["coding"]
+  },
+  "artifacts": [
+    {
+      "id": "implementation",
+      "root": "artifacts/implementation",
+      "kinds": ["patch", "verification", "review"]
+    }
+  ]
+}

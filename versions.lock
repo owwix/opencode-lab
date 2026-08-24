@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "lab": {
+    "version": "0.0.0-private",
+    "packApiVersion": "1.0.0"
+  },
+  "runtimes": {
+    "node": {
+      "version": "24.18.0",
+      "image": "node:24.18.0-alpine@sha256:d32cdf619f63fe0471182d08996dd516c6275bb5fd31ae06e55a570bd9e1ad43"
+    }
+  },
+  "components": {
+    "opencode": {
+      "version": "1.18.18",
+      "image": "ghcr.io/anomalyco/opencode@sha256:f3e00f8e25500150373c817e24b13f2f08e2ccd4cafd53dc3ad4827d47863b6f",
+      "required": true
+    },
+    "openDesign": {
+      "version": "digest-pinned",
+      "image": "ghcr.io/nexu-io/od@sha256:8620b5f5037b4cc7e4ef3779bc86571445e36764fafb7d69951a840e11aa95b8",
+      "required": false,
+      "profile": "design"
+    },
+    "hound": {
+      "version": "13.1.2",
+      "image": "opencode-lab-hound:13.1.2",
+      "required": false,
+      "profile": "research"
+    }
+  },
+  "images": {
+    "stateInit": "alpine:3.24@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b",
+    "openCodeBuild": "opencode-lab-opencode:local",
+    "agentGatewayBuild": "opencode-lab-agent-gateway:local",
+    "previewBuild": "opencode-lab-opencode-preview:local"
+  },
+  "schemas": {
+    "projectContract": 1,
+    "packManifest": 1,
+    "hostRegistry": 1,
+    "durableRun": 1,
+    "artifactIndex": 1,
+    "qualityController": 2,
+    "capabilityLease": 1
+  },
+  "configAdapters": {
+    "opencodeJson": {
+      "version": 1,
+      "fixture": "test/compatibility/opencode-v1/opencode.json",
+      "runtimeProbe": true
+    },
+    "tuiJson": {
+      "version": 1,
+      "fixture": "test/compatibility/opencode-v1/tui.json",
+      "runtimeProbe": false
+    },
+    "projectJson": {
+      "version": 1,
+      "fixture": "test/compatibility/project-v1/project.json",
+      "runtimeProbe": false
+    }
+  }
+}

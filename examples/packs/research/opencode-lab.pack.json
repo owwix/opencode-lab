@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "id": "generic-research",
+  "namespace": "generic-research",
+  "label": "Generic research",
+  "version": "1.0.0",
+  "minimumLabVersion": "1.0.0",
+  "resources": [
+    {
+      "source": "opencode/agents/example-researcher.md",
+      "target": "agents/example-researcher.md"
+    },
+    {
+      "source": "opencode/commands/example-research.md",
+      "target": "commands/example-research.md"
+    }
+  ],
+  "managedRuns": {
+    "example-research": {
+      "agent": "example-researcher",
+      "aliases": ["sample-research"],
+      "capabilities": [],
+      "model": "cloudflare-ai/@cf/openai/gpt-oss-120b",
+      "qualityContract": "research",
+      "taskPatterns": ["research|compare|evidence"],
+      "taskPrefix": "Research with citations: ",
+      "tooling": ["research"]
+    }
+  },
+  "contracts": {},
+  "services": {
+    "public-web": {
+      "profile": "research",
+      "required": true
+    }
+  },
+  "permissions": ["research"],
+  "models": {
+    "researcher": {
+      "model": "cloudflare-ai/@cf/openai/gpt-oss-120b",
+      "family": "openai-oss",
+      "purpose": "Evidence synthesis example"
+    }
+  },
+  "verification": {
+    "adapters": [],
+    "contracts": ["research"]
+  },
+  "artifacts": [
+    {
+      "id": "research",
+      "root": "artifacts/research",
+      "kinds": ["source-log", "brief", "citations"]
+    }
+  ]
+}

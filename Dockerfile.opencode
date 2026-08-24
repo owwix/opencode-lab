@@ -1,0 +1,58 @@
+FROM node:24.18.0-alpine@sha256:d32cdf619f63fe0471182d08996dd516c6275bb5fd31ae06e55a570bd9e1ad43 AS node-runtime
+FROM ghcr.io/nexu-io/od@sha256:8620b5f5037b4cc7e4ef3779bc86571445e36764fafb7d69951a840e11aa95b8 AS open-design-runtime
+
+FROM ghcr.io/anomalyco/opencode@sha256:f3e00f8e25500150373c817e24b13f2f08e2ccd4cafd53dc3ad4827d47863b6f
+
+# The launcher derives this from Dockerfile.opencode and the pinned OpenDesign
+# runtime. Doctor compares it to the local image without building anything.
+ARG OPENCODE_LAB_IMAGE_FINGERPRINT=unknown
+LABEL io.opencode-lab.build-fingerprint=${OPENCODE_LAB_IMAGE_FINGERPRINT}
+
+# The upstream image is intentionally minimal. Git supports normal coding
+# workflows; FFmpeg and a known font provide deterministic marketing-video
+# rendering for loaded visual workflow packs.
+RUN apk add --no-cache ffmpeg font-noto git openssh-client rsvg-convert \
+  && (apk add --no-cache bubblewrap || true)
+
+# OpenCode's official image contains the agent binary but no JavaScript
+# runtime. Copy the matching Alpine Node distribution so agents can run the
+# project's npm/pnpm scripts, test suite, linters, and TypeScript compiler.
+COPY --from=node-runtime /usr/local/bin/node /usr/local/bin/node
+COPY --from=node-runtime /usr/local/lib/node_modules /usr/local/lib/node_modules
+
+# Use OpenDesign's own bundled CLI and MCP server. Keeping this in the
+# OpenCode container lets the stdio MCP adapter reach the separate daemon
+# without exposing a Docker socket or sharing Cloudflare credentials.
+COPY --from=open-design-runtime /app /opt/open-design
+
+USER root
+RUN ln -sf /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \
+  && ln -sf /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx \
+  && npm install -g pnpm@9.15.9 pyright@1.1.413 \
+    typescript@6.0.3 typescript-language-server@5.3.0 \
+  && ln -sf /usr/local/lib/node_modules/pnpm/bin/pnpm.cjs /usr/local/bin/pnpm \
+  && ln -sf /usr/local/lib/node_modules/pnpm/bin/pnpx.cjs /usr/local/bin/pnpx
+
+ARG OPENCODE_UID=1000
+ARG OPENCODE_GID=1000
+RUN set -eux; \
+  case "${OPENCODE_UID}:${OPENCODE_GID}" in *[!0-9:]*) exit 1;; esac; \
+  if ! awk -F: -v gid="${OPENCODE_GID}" '$3 == gid { found=1 } END { exit !found }' /etc/group; then \
+    echo "opencode:x:${OPENCODE_GID}:" >> /etc/group; \
+  fi; \
+  if ! awk -F: -v uid="${OPENCODE_UID}" '$3 == uid { found=1 } END { exit !found }' /etc/passwd; then \
+    echo "opencode:x:${OPENCODE_UID}:${OPENCODE_GID}:OpenCode:/home/opencode:/bin/sh" >> /etc/passwd; \
+  fi; \
+  mkdir -p /home/opencode/.local/share/opencode; \
+  chown -R "${OPENCODE_UID}:${OPENCODE_GID}" /home/opencode
+
+ENV HOME=/home/opencode \
+    XDG_DATA_HOME=/home/opencode/.local/share \
+    XDG_STATE_HOME=/home/opencode/.local/share/opencode/state \
+    XDG_CONFIG_HOME=/home/opencode/.config \
+    XDG_CACHE_HOME=/tmp/opencode-cache \
+    NPM_CONFIG_CACHE=/tmp/npm-cache \
+    TMPDIR=/tmp \
+    OPENCODE_EXPERIMENTAL_LSP_TOOL=true
+
+USER ${OPENCODE_UID}:${OPENCODE_GID}

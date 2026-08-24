@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "install": [{ "name": "install", "argv": ["npm", "ci"] }],
+  "verify": [{ "name": "test", "argv": ["npm", "test"] }],
+  "development": [{ "name": "app", "argv": ["npm", "run", "dev"] }],
+  "previewPorts": [{ "name": "primary", "container": 3000, "host": 3100 }],
+  "artifactRoots": ["artifacts"],
+  "riskLevel": "standard",
+  "enabledPacks": []
+}

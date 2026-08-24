@@ -1,0 +1,43 @@
+{
+  "id": "coding",
+  "version": 2,
+  "description": "Evidence required before a coding agent can claim implementation is complete.",
+  "requiredEvidence": [
+    {
+      "kind": "change-summary",
+      "minCount": 1,
+      "description": "A concise inventory of the implemented behavior and changed paths."
+    },
+    {
+      "kind": "verification",
+      "minCount": 1,
+      "description": "Machine-readable or captured output from the repository checks."
+    }
+  ],
+  "checks": {
+    "taskBinding": {
+      "required": true
+    },
+    "nonEmpty": true,
+    "minimumBytes": 1,
+    "allowedExtensions": {
+      "change-summary": [".md", ".json", ".txt"],
+      "verification": [".json", ".xml", ".txt", ".log", ".html"]
+    },
+    "dimensions": {
+      "enabled": false,
+      "requiredFor": [],
+      "minimumByKind": {}
+    },
+    "contactSheet": {
+      "required": false,
+      "requiredWhenKindsPresent": [],
+      "coverageKinds": []
+    }
+  },
+  "completionCriteria": [
+    "The change summary names the implemented behavior and the paths changed.",
+    "Verification evidence records the exact checks run and whether they passed.",
+    "The evidence is bound to the same run and commit as the implementation."
+  ]
+}

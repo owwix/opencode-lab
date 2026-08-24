@@ -1,0 +1,261 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "share": "disabled",
+  "attachment": {
+    "image": {
+      "auto_resize": true,
+      "max_width": 2000,
+      "max_height": 2000,
+      "max_base64_bytes": 5242880
+    }
+  },
+  "default_agent": "lab",
+  "model": "cloudflare-ai/@cf/openai/gpt-oss-120b",
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 20000
+  },
+  "lsp": {
+    "typescript": {
+      "command": ["/usr/local/bin/typescript-language-server", "--stdio"],
+      "extensions": [
+        ".js",
+        ".jsx",
+        ".mjs",
+        ".cjs",
+        ".ts",
+        ".tsx",
+        ".mts",
+        ".cts"
+      ]
+    },
+    "pyright": {
+      "command": ["/usr/local/bin/pyright-langserver", "--stdio"],
+      "extensions": [".py", ".pyi"]
+    }
+  },
+  "instructions": [
+    "README.md",
+    "docs/agent-safety.md",
+    "docs/lab/AGENT.md",
+    "docs/lab/when-to-use-agents.md",
+    "docs/lab/workspace-agents.md"
+  ],
+  "provider": {
+    "cloudflare-ai": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Cloudflare Workers AI",
+      "options": {
+        "baseURL": "http://agent-gateway:8787/v1",
+        "apiKey": "{env:AGENT_GATEWAY_TOKEN}",
+        "headers": {
+          "x-lab-request-id": "{env:LAB_REQUEST_ID}",
+          "x-lab-correlation-id": "{env:LAB_CORRELATION_ID}"
+        }
+      },
+      "models": {
+        "@cf/zai-org/glm-4.7-flash": {
+          "name": "GLM-4.7 Flash"
+        },
+        "@cf/deepseek-ai/deepseek-v4-flash-0731": {
+          "name": "DeepSeek Flash"
+        },
+        "@cf/deepseek-ai/deepseek-v4-pro-0813": {
+          "name": "DeepSeek Pro"
+        },
+        "@cf/moonshotai/kimi-k2.6": {
+          "name": "Kimi K2.6",
+          "limit": { "context": 262144, "output": 8192 }
+        },
+        "@cf/moonshotai/kimi-k2.7-code": {
+          "name": "Kimi K2.7 Code",
+          "limit": { "context": 262144, "output": 8192 }
+        },
+        "@cf/zai-org/glm-5.2": {
+          "name": "GLM-5.2",
+          "limit": { "context": 202752, "output": 8192 }
+        },
+        "@cf/openai/gpt-oss-120b": {
+          "name": "GPT-OSS 120B",
+          "limit": { "context": 128000, "output": 8192 }
+        }
+      }
+    },
+    "openai": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OpenAI (gateway)",
+      "options": {
+        "baseURL": "http://agent-gateway:8787/openai/v1",
+        "apiKey": "{env:AGENT_GATEWAY_TOKEN}",
+        "headers": {
+          "x-lab-request-id": "{env:LAB_REQUEST_ID}",
+          "x-lab-correlation-id": "{env:LAB_CORRELATION_ID}"
+        }
+      },
+      "models": {
+        "gpt-5": { "name": "GPT-5" },
+        "gpt-5-mini": { "name": "GPT-5 mini" },
+        "gpt-4.1": { "name": "GPT-4.1" },
+        "gpt-4.1-mini": { "name": "GPT-4.1 mini" },
+        "o4-mini": { "name": "o4-mini" }
+      }
+    },
+    "google-vertex": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Google Vertex AI",
+      "options": {
+        "baseURL": "http://agent-gateway:8787/vertex/v1",
+        "apiKey": "{env:AGENT_GATEWAY_TOKEN}",
+        "headers": {
+          "x-lab-request-id": "{env:LAB_REQUEST_ID}",
+          "x-lab-correlation-id": "{env:LAB_CORRELATION_ID}"
+        }
+      },
+      "models": {
+        "gemini-3.7-flash": {
+          "name": "Gemini 3.7 Flash",
+          "limit": { "context": 1048576, "output": 65536 }
+        },
+        "gemini-3.1-pro-preview": {
+          "name": "Gemini 3.1 Pro",
+          "limit": { "context": 1048576, "output": 65536 }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp",
+      "enabled": false,
+      "codemode": false
+    },
+    "open-design": {
+      "type": "local",
+      "command": ["node", "/opt/open-design/apps/daemon/dist/cli.js", "mcp"],
+      "enabled": true,
+      "timeout": 15000,
+      "environment": {
+        "OD_DAEMON_URL": "http://agent-gateway:8787/open-design",
+        "OD_API_TOKEN": "{env:AGENT_GATEWAY_TOKEN}"
+      }
+    },
+    "quality": {
+      "type": "remote",
+      "url": "http://agent-gateway:8787/quality/mcp",
+      "enabled": true,
+      "codemode": false,
+      "timeout": 3600000,
+      "headers": {
+        "Authorization": "Bearer {env:AGENT_GATEWAY_TOKEN}"
+      }
+    },
+    "hound": {
+      "type": "remote",
+      "url": "http://hound-relay:8765/mcp",
+      "enabled": true,
+      "codemode": false,
+      "timeout": 180000
+    },
+    "github": {
+      "type": "local",
+      "command": ["node", "/opencode-config/scripts/github/mcp.mjs"],
+      "enabled": true,
+      "timeout": 180000,
+      "environment": {
+        "GITHUB_PUBLISH_GATEWAY_URL": "http://agent-gateway:8787",
+        "AGENT_GATEWAY_TOKEN": "{env:AGENT_GATEWAY_TOKEN}"
+      }
+    },
+    "lab-browser": {
+      "type": "local",
+      "command": ["node", "/opencode-config/scripts/lab/browser-mcp.mjs"],
+      "enabled": true,
+      "timeout": 120000,
+      "environment": {
+        "LAB_BROWSER_SESSION_URL": "http://host.docker.internal:3112"
+      }
+    }
+  },
+  "permission": {
+    "*": "ask",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "**/*.env": "deny",
+      "**/*.env.*": "deny",
+      "*.dev.vars": "deny",
+      "*.dev.vars.*": "deny",
+      "**/*.dev.vars": "deny",
+      "**/*.dev.vars.*": "deny",
+      "**/*.pem": "deny",
+      "**/*.key": "deny",
+      "**/credentials.json": "deny",
+      "**/secrets.json": "deny"
+    },
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "todoread": "allow",
+    "todowrite": "allow",
+    "edit": "ask",
+    "task": "deny",
+    "external_directory": "deny",
+    "doom_loop": "ask",
+    "quality_*": "deny",
+    "notion_*": "ask",
+    "open-design_*": "deny",
+    "hound_*": "deny",
+    "github_github_status": "allow",
+    "github_github_push": "ask",
+    "github_github_open_pr": "ask",
+    "lab-browser_*": "ask",
+    "bash": {
+      "*": "ask",
+      "git status*": "deny",
+      "git diff*": "deny",
+      "git log*": "deny",
+      "git show*": "deny",
+      "git ls-files*": "deny",
+      "node /opencode-config/scripts/security/safe-git.mjs *": "allow",
+      "node /opencode-config/scripts/security/safe-remove.mjs plan *": "allow",
+      "node /opencode-config/scripts/security/safe-remove.mjs execute *": "ask",
+      "node /opencode-config/scripts/local-preview/check.mjs*": "allow",
+      "node /opencode-config/scripts/lab/checkpoint.mjs *": "allow",
+      "node /opencode-config/scripts/lab/browser-verify.mjs*": "allow",
+      "node /opencode-config/scripts/notion/publish.mjs *": "ask",
+      "rg *": "deny",
+      "npm test*": "allow",
+      "npm run check*": "allow",
+      "npm run lint*": "allow",
+      "npm run typecheck*": "allow",
+      "npm run types*": "allow",
+      "npm run format:check*": "allow",
+      "node --test*": "allow",
+      "env*": "deny",
+      "printenv*": "deny",
+      "cat *.env*": "deny",
+      "cat **/*.env*": "deny",
+      "cat *.dev.vars*": "deny",
+      "cat **/*.dev.vars*": "deny",
+      "git commit *": "ask",
+      "git push *": "deny",
+      "gh *": "deny",
+      "git merge *": "ask",
+      "git reset *": "ask",
+      "git clean *": "ask",
+      "rm *": "deny",
+      "rmdir *": "deny",
+      "unlink *": "deny",
+      "find * -delete*": "deny",
+      "docker *": "ask",
+      "railway *": "ask",
+      "wrangler deploy *": "ask",
+      "npm run deploy*": "ask",
+      "npm run docker:*": "ask"
+    }
+  }
+}

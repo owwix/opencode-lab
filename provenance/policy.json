@@ -16,9 +16,21 @@
       "classification": "attributed-upstream",
       "license": "various",
       "notice": "THIRD_PARTY_NOTICES.md#dependency-manifests"
+    },
+    "contributor-covenant-2.1": {
+      "classification": "attributed-upstream",
+      "license": "CC-BY-4.0",
+      "notice": "THIRD_PARTY_NOTICES.md#contributor-covenant"
+    },
+    "dco-1.1": {
+      "classification": "attributed-upstream",
+      "license": "DCO-1.1",
+      "notice": "THIRD_PARTY_NOTICES.md#developer-certificate-of-origin"
     }
   },
   "overrides": {
+    "CODE_OF_CONDUCT.md": "contributor-covenant-2.1",
+    "DCO": "dco-1.1",
     "LICENSE": "opencode-lab",
     "package-lock.json": "dependency-lock",
     "quality/inspect/uv.lock": "dependency-lock",

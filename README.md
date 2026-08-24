@@ -128,6 +128,12 @@ npm run lab:browser -- http://127.0.0.1:3100
   only when their reported project ID and workspace hash match the launch
 - Container: `read_only`, `cap_drop: ALL`, `no-new-privileges`, optional bwrap
 
+The supported trust boundaries, attacker model, and known experimental limits
+are documented in the [threat model](docs/threat-model.md). The public core has
+no outbound product telemetry in v0.x. Company-specific agents, destinations,
+credentials, evaluation cases, and operating policy belong in private packs;
+see the [public/private product boundary](docs/product-boundary.md).
+
 ## Verify
 
 ```bash
@@ -141,6 +147,15 @@ Public release candidates are exported from the private development repository
 as a provenance-checked allowlisted tree with one new root commit. See
 `docs/public-release.md`. Original contributions are Apache-2.0; retained
 upstream notices are in `THIRD_PARTY_NOTICES.md`.
+
+## Community and support
+
+- Security reports: [SECURITY.md](SECURITY.md)
+- Supported versions and help: [SUPPORT.md](SUPPORT.md)
+- Contributions and DCO sign-off: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Community standards: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- Proposed design changes: [RFC template](docs/rfcs/0000-template.md)
+- Release history: [CHANGELOG.md](CHANGELOG.md)
 
 ## Layout
 

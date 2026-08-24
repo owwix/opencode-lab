@@ -7,6 +7,12 @@ ENV NODE_ENV=production \
 WORKDIR /app
 COPY --chown=node:node capability-lease.mjs gateway.mjs server.mjs ./
 
+# This service executes only checked-in ESM with the Node runtime. Removing the
+# bundled package manager reduces the production image and prevents npm's
+# transitive tools from becoming an unnecessary runtime vulnerability surface.
+RUN rm -rf -- /usr/local/lib/node_modules/npm \
+  && rm -f -- /usr/local/bin/npm /usr/local/bin/npx
+
 USER node
 EXPOSE 8787
 

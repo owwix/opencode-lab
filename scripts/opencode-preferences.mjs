@@ -48,10 +48,7 @@ export function writeLabPreferences(update, path = PREFERENCES_PATH) {
  * the Lab plugin applies the narrower mode while hard permission denies remain
  * outside the project process.
  */
-export function applyAutoApproveArgs(
-  argv,
-  { path = PREFERENCES_PATH, preferences = readLabPreferences(path) } = {}
-) {
+export function applyAutoApproveArgs(argv, { path = PREFERENCES_PATH } = {}) {
   const args = [...argv];
   const hasAuto = args.includes("--auto");
   const hasNoAuto = args.includes("--no-auto");

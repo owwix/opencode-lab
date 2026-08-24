@@ -11,12 +11,52 @@
       "sha256": "ac5392a517edc908ef6a653e3246de4f5e973b82a3ac789cfe4af7bc080df0ee"
     },
     {
+      "path": ".github/CODEOWNERS",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "368f5ec1ecfd01861a18b1e25e0d08f10bc5454ffeb7ec97420865c06576f4f1"
+    },
+    {
       "path": ".github/dependabot.yml",
       "classification": "attributed-upstream",
       "source": "cloudflare-harness-import",
       "license": "MIT",
       "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
       "sha256": "3d8349674130039e4b02b4c1b3c01b5b0b4afab629ae42eedadf3c7861b48632"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6851af372e1a61d2675a6be6534a001d8b1faa596d219d2c102f2575237465ac"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "276725a766ac23c77c4828209651010bbb3dd9fabccffa27975935e8b3445fff"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "f1022aa31a0b608df910e9f3caf964dbc7af226743276eed8b7fe80aea8174a4"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "499ad462a9c1608c0d5e16ec11b5bb7e9e7f2fd6eb804a0efa5dabb62958f037"
     },
     {
       "path": ".github/workflows/agent-quality.yml",
@@ -40,7 +80,7 @@
       "source": "cloudflare-harness-import",
       "license": "MIT",
       "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
-      "sha256": "468207a6e5dd7cef9655da30d793194915c480b2f4507d383a68ecdff7165e73"
+      "sha256": "92eaecab88fdc85e29130c0aee3ac8f067d489f13b2e1cfb36839f78961a6d0a"
     },
     {
       "path": ".github/workflows/scheduled-model-regression.yml",
@@ -56,7 +96,7 @@
       "source": "opencode-lab",
       "license": "Apache-2.0",
       "notice": "Copyright 2026 OpenCode Lab contributors",
-      "sha256": "21faed200d0713e7f14c76309f7b8c2c7f6b7f316ad3d71a605868595cf539cf"
+      "sha256": "56ae3d931565f0ece7391d29678472d4503e22d8b57a08ad25b557c472fc62c7"
     },
     {
       "path": ".github/workflows/semgrep.yml",
@@ -64,7 +104,15 @@
       "source": "cloudflare-harness-import",
       "license": "MIT",
       "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
-      "sha256": "5c5df63ab941c8f91937d76b42b30e076ba101852051c5d62d1b34a093997933"
+      "sha256": "dad416ac65cdda32ffd4c7486ca05bb4bd7227c75af60c62c062d183b43f73a9"
+    },
+    {
+      "path": ".github/workflows/supply-chain.yml",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "f80cff949d545f3b948ea16268ffddf4b2d8691fc18ac40e2b4e2d8602a91c8c"
     },
     {
       "path": ".gitignore",
@@ -419,12 +467,44 @@
       "sha256": "add52e70ca71d75b34a8b5d3fdc95e74d3670c4b348da07c133650361690bee3"
     },
     {
+      "path": "CHANGELOG.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "99d9ba4ae2b2491a2e7997070c71be68134344a5ebdb7a1bd7adcb2ca7ddbc1a"
+    },
+    {
       "path": "cloudflare/ai-gateway.routes.example.json",
       "classification": "attributed-upstream",
       "source": "cloudflare-harness-import",
       "license": "MIT",
       "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
       "sha256": "e76b453a9e6013da2615cff346983d211ba002389817b98f962d89783b1e0153"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "classification": "attributed-upstream",
+      "source": "contributor-covenant-2.1",
+      "license": "CC-BY-4.0",
+      "notice": "THIRD_PARTY_NOTICES.md#contributor-covenant",
+      "sha256": "c08044d535b69ff2547088fcf9dff3c3cc425697e4ed0e243c2b328e38f02b01"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "51b2a30ff66a8c2075b9f17670cdbeb05cbc07e4e057297dfaf4282969c0e8f7"
+    },
+    {
+      "path": "DCO",
+      "classification": "attributed-upstream",
+      "source": "dco-1.1",
+      "license": "DCO-1.1",
+      "notice": "THIRD_PARTY_NOTICES.md#developer-certificate-of-origin",
+      "sha256": "3b5dcb57d79d0a3e75bcae32e8a0f127fc8480aaee7a3d35f0925dd97cf23bd9"
     },
     {
       "path": "docker-compose.opencode.yml",
@@ -464,7 +544,7 @@
       "source": "cloudflare-harness-import",
       "license": "MIT",
       "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
-      "sha256": "8d88905ccd3627ada402fd80c52d605cc9edd270993c2a48125d945cd2f7f383"
+      "sha256": "06f663c2ebf00255e70c8d34ed2182ffbe41e25c93a86cb93d468a7ea0974d69"
     },
     {
       "path": "docker/agent-gateway/gateway.mjs",
@@ -739,6 +819,14 @@
       "sha256": "ada28006317234ab1a6c8e4cc7519f1ef5b52b195e81614bb2608fefce89ee9c"
     },
     {
+      "path": "docs/product-boundary.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "f43ac033eafbfa6278519b75b74bc67a599cae09d7fee7ab7245e20d6994194c"
+    },
+    {
       "path": "docs/public-release.md",
       "classification": "original",
       "source": "opencode-lab",
@@ -753,6 +841,22 @@
       "license": "MIT",
       "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
       "sha256": "6bd72c89d0b8d05405ed3d8704b9c2fbc3aaef045f33c74bcc8a71e64f309315"
+    },
+    {
+      "path": "docs/rfcs/0000-template.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "4846ee2f39dcfc025c33a99df6eae271f620f39b0ca1d16544968d70dfdd4aa7"
+    },
+    {
+      "path": "docs/threat-model.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "9769e044b7463701e1751e0a8196150c4fa62e9b4ccffefc885cdc7a70cae9c1"
     },
     {
       "path": "launch-opencode.command",
@@ -792,7 +896,7 @@
       "source": "dependency-lock",
       "license": "various",
       "notice": "THIRD_PARTY_NOTICES.md#dependency-manifests",
-      "sha256": "9d2e7100f95b09a84c1736741c98949231ef5181f99017b9deba594b9863cb0a"
+      "sha256": "6321b32f3cc27c315fd9375c269527740f602f9859f6712a1dcefef9e3630f30"
     },
     {
       "path": "package.json",
@@ -800,7 +904,7 @@
       "source": "cloudflare-harness-import",
       "license": "MIT",
       "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
-      "sha256": "6aff0bf585390361e357516ae52a081f4bf06fe57df23239794497470b22406b"
+      "sha256": "249efa081220a4ae5597776217508659dd69ce05afd4b6d9f9f547355458fbbd"
     },
     {
       "path": "provenance/files.json",
@@ -816,7 +920,7 @@
       "source": "opencode-lab",
       "license": "Apache-2.0",
       "notice": "Copyright 2026 OpenCode Lab contributors",
-      "sha256": "034944f5b7e7859abc6be1d74fcd2007724a8d388a0a37635f3dafa240adff21"
+      "sha256": "fc714e61385e3bcfa6dc8e0f85a4da5d2c2bbd8185e3d0f62e1159fd653b2a21"
     },
     {
       "path": "quality/contracts/coding.json",
@@ -888,7 +992,7 @@
       "source": "cloudflare-harness-import",
       "license": "MIT",
       "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
-      "sha256": "d004147652f9e43a9eeea5feee33764977c8b70e2afa6b975a7464009fd79f76"
+      "sha256": "b202fa8937fb084bc42c8ad97d319cea3ffc3ef1718553aeadcb82c154c9cfb1"
     },
     {
       "path": "quality/inspect/README.md",
@@ -928,7 +1032,7 @@
       "source": "dependency-lock",
       "license": "various",
       "notice": "THIRD_PARTY_NOTICES.md#dependency-manifests",
-      "sha256": "6abf2bdeae5d2cf643f4853ed2e99f8f5e7f982663a952afcf5591fb7888e88a"
+      "sha256": "d9b75d59bd14e3eda575ca12147f534d6f6fc262c7b0d5be447b6f9195c7f89e"
     },
     {
       "path": "quality/model-routing.json",
@@ -944,7 +1048,7 @@
       "source": "cloudflare-harness-import",
       "license": "MIT",
       "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
-      "sha256": "23b01fc0439dd0c01071b9f565f3f67fba6cba12cc2709005480c7b9deeb6fd4"
+      "sha256": "d20c82aad5f3c94cc64afd8853fa1465b647c9a285fb2d8f9edc221509746f33"
     },
     {
       "path": "scripts/agent-doctor.mjs",
@@ -1336,7 +1440,7 @@
       "source": "cloudflare-harness-import",
       "license": "MIT",
       "notice": "THIRD_PARTY_NOTICES.md#cloudflare-licensed-harness-import",
-      "sha256": "e94f624ad3dd5a31761b61ac22ec7071251db8f3a2f37bad54564851d1890881"
+      "sha256": "b0d785610a12a61f54909f4b8a242198a98e8ca236a36f34c6c13e07cd6e2ddb"
     },
     {
       "path": "scripts/opencode-preferences.test.mjs",
@@ -1739,6 +1843,14 @@
       "sha256": "d593200133b2b65080e969e8d310e153010f5747e8615c2d09694bce8437545d"
     },
     {
+      "path": "scripts/release/governance-policy.test.mjs",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "90f11144b5a4e1cc46babc6a80e89acc55cc67b4c1b411e302e70d9f87302be3"
+    },
+    {
       "path": "scripts/release/provenance.mjs",
       "classification": "original",
       "source": "opencode-lab",
@@ -1787,12 +1899,28 @@
       "sha256": "afb8fde344bf0e11f030975f7226a55d75039733ccc5fe2d0699e7d26c35904c"
     },
     {
+      "path": "SECURITY.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "5a7bd8df6693fc708653a47d53139f7cc72ce7347c4406bae63e1db93c5ff650"
+    },
+    {
+      "path": "SUPPORT.md",
+      "classification": "original",
+      "source": "opencode-lab",
+      "license": "Apache-2.0",
+      "notice": "Copyright 2026 OpenCode Lab contributors",
+      "sha256": "6ff9caea2b1a0acadff0151000c59ec6e4185889d508134c938c926c936bb2f4"
+    },
+    {
       "path": "THIRD_PARTY_NOTICES.md",
       "classification": "original",
       "source": "opencode-lab",
       "license": "Apache-2.0",
       "notice": "Copyright 2026 OpenCode Lab contributors",
-      "sha256": "9925e56c7d9ebfdde860478ee0647a06c0861939f1a13cbdaa75cdd7bea7a6c2"
+      "sha256": "5a087396aab7c69c137e74e4a2eeb0ea9d2e11a63f8614f634c078773f97911a"
     },
     {
       "path": "tsconfig.json",

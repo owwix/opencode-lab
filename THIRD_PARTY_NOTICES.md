@@ -40,3 +40,18 @@ license and notices.
 files enumerate independently licensed packages. Those lock files are
 classified as `attributed-upstream`; each dependency remains governed by the
 license published with that package.
+
+## Contributor Covenant
+
+`CODE_OF_CONDUCT.md` is adapted from Contributor Covenant version 2.1,
+available at <https://www.contributor-covenant.org/version/2/1/code_of_conduct/>.
+Contributor Covenant is licensed under the Creative Commons Attribution 4.0
+International license. OpenCode Lab modifies the enforcement contact and
+project-specific wording.
+
+## Developer Certificate of Origin
+
+`DCO` reproduces Developer Certificate of Origin version 1.1 from
+<https://developercertificate.org/>. The upstream page permits verbatim copying
+and prohibits modification; OpenCode Lab retains that text as the contribution
+sign-off standard.

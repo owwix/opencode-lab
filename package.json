@@ -84,11 +84,11 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@dagger.io/dagger": "0.21.8",
+    "@dagger.io/dagger": "0.21.9",
     "@open-pets/cli": "3.3.0",
-    "@types/node": "^26.0.1",
-    "oxfmt": "^0.56.0",
-    "oxlint": "^1.71.0",
+    "@types/node": "^26.4.0",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
     "typescript": "^6.0.3"
   },
   "overrides": {
